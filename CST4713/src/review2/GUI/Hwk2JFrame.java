@@ -215,7 +215,8 @@ public class Hwk2JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_clearBActionPerformed
 
     private void exitBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBActionPerformed
-        // TODO add your handling code here:
+        //exiting from the form 
+        System.exit(0);
     }//GEN-LAST:event_exitBActionPerformed
 
     /**
