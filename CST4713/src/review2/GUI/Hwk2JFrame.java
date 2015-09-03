@@ -95,6 +95,11 @@ public class Hwk2JFrame extends javax.swing.JFrame {
         submitB.setText("Submit");
 
         exitB.setText("Exit");
+        exitB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -193,8 +198,25 @@ public class Hwk2JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_securityCBActionPerformed
 
     private void clearBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBActionPerformed
-        // TODO add your handling code here:
+        // clearing the form of input
+        nameTextField.setText("");
+        
+        //clearing the radioButton
+        colorGroup.clearSelection();
+        
+        //clearing the comboBox
+        stateList.setSelectedIndex(0);
+        
+        //clearing the checkBox
+        securityCB.setSelected(false);
+        appCB.setSelected(false);
+        roboticCB.setSelected(false);
+        
     }//GEN-LAST:event_clearBActionPerformed
+
+    private void exitBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exitBActionPerformed
 
     /**
      * @param args the command line arguments
