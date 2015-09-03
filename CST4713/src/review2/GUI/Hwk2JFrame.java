@@ -248,19 +248,35 @@ public class Hwk2JFrame extends javax.swing.JFrame {
                 }
             }
 
-            //2. readinng color
-            if (redRB.isSelected()) {
-                color = redRB.getText();
-            }
-            if (blueRB.isSelected()) {
-                color = blueRB.getText();
-            }
-            if (greenRB.isSelected()) {
-                color = greenRB.getText();
+            //2. readinng and validtion of color select
+            if (colorGroup.isSelected(null)) {
+                JOptionPane.showMessageDialog(null, "Please select color");
+            } else {
+                if (redRB.isSelected()) {
+                    color = redRB.getText();
+                }
+                if (blueRB.isSelected()) {
+                    color = blueRB.getText();
+                }
+                if (greenRB.isSelected()) {
+                    color = greenRB.getText();
+                }
             }
             
-            if(color.equals("")){
+            //3. Reding USSate list
+            if (stateList.getSelectedIndex() == -1 || stateList.getSelectedIndex() == 0) {
                 JOptionPane.showMessageDialog(null, "Please select color");
+            } else {
+                if (stateList.getSelectedIndex() == 1) {
+                    USstate = stateList.getSelectedItem().toString();
+                    
+                }
+                if (blueRB.isSelected()) {
+                    color = blueRB.getText();
+                }
+                if (greenRB.isSelected()) {
+                    color = greenRB.getText();
+                }
             }
 
         } catch (Exception e) {
