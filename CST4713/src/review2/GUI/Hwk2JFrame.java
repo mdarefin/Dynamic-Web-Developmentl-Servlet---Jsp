@@ -236,20 +236,11 @@ public class Hwk2JFrame extends javax.swing.JFrame {
             name = nameTextField.getText();
 
             //name validation: not blank and doesn't contains numbers
-            if (name.equalsIgnoreCase("")) {
-                errorMessage = "Please enter valid name\n";
-
-            }
+           
             //cheing if name is all charecter
-            char[] nameChar = name.toCharArray();
-            for (char c : nameChar) {
-                if (!Character.isLetter(c)) {
-                    errorMessage = errorMessage + "Please enter valid name\n";
-
-                    break;
-                }
+            if (!name.matches("[a-zA-Z- ]+")) {
+                errorMessage = errorMessage + "Please enter valid name\n";
             }
-
             //2. readinng and validtion of color select
             if (colorGroup.isSelected(null)) {
                 errorMessage = errorMessage + "Please select color\n";
@@ -285,23 +276,23 @@ public class Hwk2JFrame extends javax.swing.JFrame {
 
             //4. checking the textBox 
             if (securityCB.isSelected()) {
-                iField = securityCB.getText() + " ";
+                iField = " "+securityCB.getText();
             }
             if (appCB.isSelected()) {
-                iField = appCB.getText() + iField + " ";
+                iField = " "+appCB.getText() + iField;
             }
             if (roboticCB.isSelected()) {
-                iField = roboticCB.getText() + iField + " ";
+                iField = " "+roboticCB.getText() + iField;
             }
 
             //if error: displaying all error message togather in else diplay the result
-            if (!errorMessage.equals(null)) {
+            if (!errorMessage.equals("")) {
                 JOptionPane.showMessageDialog(null, errorMessage);
             } else {
-                JOptionPane.showMessageDialog(null, "Name: " + name 
-                        + "\n Preffered color: " + color 
-                        + "\n Sate Least visited" + usState
-                        + "\n IT Filed of Interest "+iField);
+                JOptionPane.showMessageDialog(null, "Name: " + name
+                        + "\n Preffered color: " + color
+                        + "\n Sate Least visited: " + usState
+                        + "\n IT Filed of Interest: " + iField);
             }
 
         } catch (Exception e) {
