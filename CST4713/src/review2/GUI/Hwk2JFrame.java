@@ -236,7 +236,6 @@ public class Hwk2JFrame extends javax.swing.JFrame {
             name = nameTextField.getText();
 
             //name validation: not blank and doesn't contains numbers
-           
             //cheing if name is all charecter
             if (!name.matches("[a-zA-Z- ]+")) {
                 errorMessage = errorMessage + "Please enter valid name\n";
@@ -264,7 +263,6 @@ public class Hwk2JFrame extends javax.swing.JFrame {
             } else {
                 if (stateList.getSelectedIndex() == 1) {
                     usState = stateList.getSelectedItem().toString();
-
                 }
                 if (blueRB.isSelected()) {
                     color = blueRB.getText();
@@ -276,13 +274,13 @@ public class Hwk2JFrame extends javax.swing.JFrame {
 
             //4. checking the textBox 
             if (securityCB.isSelected()) {
-                iField = " "+securityCB.getText();
+                iField = " " + securityCB.getText();
             }
             if (appCB.isSelected()) {
-                iField = " "+appCB.getText() + iField;
+                iField = " " + appCB.getText() + iField;
             }
             if (roboticCB.isSelected()) {
-                iField = " "+roboticCB.getText() + iField;
+                iField = " " + roboticCB.getText() + iField;
             }
 
             //if error: displaying all error message togather in else diplay the result
