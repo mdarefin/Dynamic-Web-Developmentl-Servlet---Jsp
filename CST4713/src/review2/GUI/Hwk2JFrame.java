@@ -258,6 +258,10 @@ public class Hwk2JFrame extends javax.swing.JFrame {
             if (greenRB.isSelected()) {
                 color = greenRB.getText();
             }
+            
+            if(color.equals("")){
+                JOptionPane.showMessageDialog(null, "Please select color");
+            }
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "error " + e);
