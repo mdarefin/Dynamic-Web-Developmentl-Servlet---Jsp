@@ -230,27 +230,30 @@ public class Hwk2JFrame extends javax.swing.JFrame {
         // validate user from
         try {
             //creating local variable to hold the inputs
-            String name = "", color = "", ITfield = "", USstate = "", nameValidMessage = "";
+            String name = "", color = "", ITfield = "", USstate = "", errorMessage = "";
 
             //reading the name
             name = nameTextField.getText();
 
             //name validation: not blank and doesn't contains numbers
             if (name.equalsIgnoreCase("")) {
-                JOptionPane.showMessageDialog(null, "Please enter valid name");
+                errorMessage = "Please enter valid name\n";
+                
             }
             //cheing if name is all charecter
             char[] nameChar = name.toCharArray();
             for (char c : nameChar) {
                 if (!Character.isLetter(c)) {
-                    JOptionPane.showMessageDialog(null, "Please enter valid name");
+                    errorMessage =errorMessage+ "Please enter valid name\n";
+                    
                     break;
                 }
             }
 
             //2. readinng and validtion of color select
             if (colorGroup.isSelected(null)) {
-                JOptionPane.showMessageDialog(null, "Please select color");
+                errorMessage = errorMessage+"Please select color\n";
+                
             } else {
                 if (redRB.isSelected()) {
                     color = redRB.getText();
@@ -265,7 +268,8 @@ public class Hwk2JFrame extends javax.swing.JFrame {
             
             //3. Reding USSate list
             if (stateList.getSelectedIndex() == -1 || stateList.getSelectedIndex() == 0) {
-                JOptionPane.showMessageDialog(null, "Please select color");
+                errorMessage = errorMessage+"Please select State";
+                
             } else {
                 if (stateList.getSelectedIndex() == 1) {
                     USstate = stateList.getSelectedItem().toString();
@@ -277,6 +281,11 @@ public class Hwk2JFrame extends javax.swing.JFrame {
                 if (greenRB.isSelected()) {
                     color = greenRB.getText();
                 }
+            }
+            
+            if(!errorMessage.equals(null)){
+                JOptionPane.showMessageDialog(null,errorMessage );
+            }else{
             }
 
         } catch (Exception e) {
