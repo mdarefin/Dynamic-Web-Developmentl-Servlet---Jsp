@@ -230,7 +230,7 @@ public class Hwk2JFrame extends javax.swing.JFrame {
         // validate user from
         try {
             //creating local variable to hold the inputs
-            String name = "", color = "", ITfield = "", USstate = "", errorMessage = "";
+            String name = "", color = "", iField = "", usState = "", errorMessage = "";
 
             //reading the name
             name = nameTextField.getText();
@@ -238,22 +238,22 @@ public class Hwk2JFrame extends javax.swing.JFrame {
             //name validation: not blank and doesn't contains numbers
             if (name.equalsIgnoreCase("")) {
                 errorMessage = "Please enter valid name\n";
-                
+
             }
             //cheing if name is all charecter
             char[] nameChar = name.toCharArray();
             for (char c : nameChar) {
                 if (!Character.isLetter(c)) {
-                    errorMessage =errorMessage+ "Please enter valid name\n";
-                    
+                    errorMessage = errorMessage + "Please enter valid name\n";
+
                     break;
                 }
             }
 
             //2. readinng and validtion of color select
             if (colorGroup.isSelected(null)) {
-                errorMessage = errorMessage+"Please select color\n";
-                
+                errorMessage = errorMessage + "Please select color\n";
+
             } else {
                 if (redRB.isSelected()) {
                     color = redRB.getText();
@@ -265,15 +265,15 @@ public class Hwk2JFrame extends javax.swing.JFrame {
                     color = greenRB.getText();
                 }
             }
-            
+
             //3. Reding USSate list
             if (stateList.getSelectedIndex() == -1 || stateList.getSelectedIndex() == 0) {
-                errorMessage = errorMessage+"Please select State";
-                
+                errorMessage = errorMessage + "Please select State";
+
             } else {
                 if (stateList.getSelectedIndex() == 1) {
-                    USstate = stateList.getSelectedItem().toString();
-                    
+                    usState = stateList.getSelectedItem().toString();
+
                 }
                 if (blueRB.isSelected()) {
                     color = blueRB.getText();
@@ -282,10 +282,26 @@ public class Hwk2JFrame extends javax.swing.JFrame {
                     color = greenRB.getText();
                 }
             }
-            
-            if(!errorMessage.equals(null)){
-                JOptionPane.showMessageDialog(null,errorMessage );
-            }else{
+
+            //4. checking the textBox 
+            if (securityCB.isSelected()) {
+                iField = securityCB.getText() + " ";
+            }
+            if (appCB.isSelected()) {
+                iField = appCB.getText() + iField + " ";
+            }
+            if (roboticCB.isSelected()) {
+                iField = roboticCB.getText() + iField + " ";
+            }
+
+            //if error: displaying all error message togather in else diplay the result
+            if (!errorMessage.equals(null)) {
+                JOptionPane.showMessageDialog(null, errorMessage);
+            } else {
+                JOptionPane.showMessageDialog(null, "Name: " + name 
+                        + "\n Preffered color: " + color 
+                        + "\n Sate Least visited" + usState
+                        + "\n IT Filed of Interest "+iField);
             }
 
         } catch (Exception e) {
