@@ -5,6 +5,8 @@
  */
 package review2.GUI;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author WaLiD
@@ -93,6 +95,11 @@ public class Hwk2JFrame extends javax.swing.JFrame {
         });
 
         submitB.setText("Submit");
+        submitB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitBActionPerformed(evt);
+            }
+        });
 
         exitB.setText("Exit");
         exitB.addActionListener(new java.awt.event.ActionListener() {
@@ -200,24 +207,62 @@ public class Hwk2JFrame extends javax.swing.JFrame {
     private void clearBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBActionPerformed
         // clearing the form of input
         nameTextField.setText("");
-        
+
         //clearing the radioButton
         colorGroup.clearSelection();
-        
+
         //clearing the comboBox
         stateList.setSelectedIndex(0);
-        
+
         //clearing the checkBox
         securityCB.setSelected(false);
         appCB.setSelected(false);
         roboticCB.setSelected(false);
-        
+
     }//GEN-LAST:event_clearBActionPerformed
 
     private void exitBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBActionPerformed
         //exiting from the form 
         System.exit(0);
     }//GEN-LAST:event_exitBActionPerformed
+
+    private void submitBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBActionPerformed
+        // validate user from
+        try {
+            //creating local variable to hold the inputs
+            String name = "", color = "", ITfield = "", USstate = "", nameValidMessage = "";
+
+            //reading the name
+            name = nameTextField.getText();
+
+            //name validation: not blank and doesn't contains numbers
+            if (name.equalsIgnoreCase("")) {
+                JOptionPane.showMessageDialog(null, "Please enter valid name");
+            }
+            //cheing if name is all charecter
+            char[] nameChar = name.toCharArray();
+            for (char c : nameChar) {
+                if (!Character.isLetter(c)) {
+                    JOptionPane.showMessageDialog(null, "Please enter valid name");
+                    break;
+                }
+            }
+
+            //2. readinng color
+            if (redRB.isSelected()) {
+                color = redRB.getText();
+            }
+            if (blueRB.isSelected()) {
+                color = blueRB.getText();
+            }
+            if (greenRB.isSelected()) {
+                color = greenRB.getText();
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "error " + e);
+        }
+    }//GEN-LAST:event_submitBActionPerformed
 
     /**
      * @param args the command line arguments
