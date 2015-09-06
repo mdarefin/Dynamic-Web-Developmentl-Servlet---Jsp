@@ -63,7 +63,7 @@ public class AssignmentPhoneBook extends javax.swing.JFrame {
 
         numberLabel.setText("Number:");
 
-        contactListComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Contact List", " " }));
+        contactListComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Contact List" }));
         contactListComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contactListComboBoxActionPerformed(evt);
@@ -168,6 +168,8 @@ public class AssignmentPhoneBook extends javax.swing.JFrame {
             contactList.put(name, number);
             contactListComboBox.addItem(name);
             JOptionPane.showMessageDialog(null, "Contact is Entered Successfully");
+            nameTxtField.setText("");
+            numberTxtField.setText("");
         }
     }//GEN-LAST:event_enterButtonActionPerformed
 
