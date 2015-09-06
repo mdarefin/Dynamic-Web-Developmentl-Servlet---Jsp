@@ -180,12 +180,13 @@ public class AssignmentPhoneBook extends javax.swing.JFrame {
             errorMessage = errorMessage + "Please select Contact";
 
         } else {
-            
+            //getting the selected name, which is key of out HashMap
             String keyName = contactListComboBox.getSelectedItem().toString();
             if(!contactList.isEmpty()){
-                contactList.get(keyName);
+                JOptionPane.showMessageDialog(null,"Name: "+keyName+"\nNumber: "+contactList.get(keyName));
             }
-            JOptionPane.showMessageDialog(null,"Name: "+keyName+"\nNumber: "+contactList.get(keyName));
+            //setting default to contactList
+            contactListComboBox.setSelectedIndex(0);
 
         }
     }//GEN-LAST:event_findButtonActionPerformed
