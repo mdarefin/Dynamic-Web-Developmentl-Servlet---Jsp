@@ -7,6 +7,7 @@ package review2.GUI;
 
 import java.util.Set;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,8 +15,7 @@ import javax.swing.JFrame;
  */
 public class AssignmentPhoneBook extends javax.swing.JFrame {
 
-    private static String name, number;
-    private Set<String> errorMessage = null;
+    private static String name, number, errorMessage;
 
     /**
      * Creates new form AssignmentPhoneBook
@@ -148,23 +148,20 @@ public class AssignmentPhoneBook extends javax.swing.JFrame {
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
         // Get the name and number from txtBox and add them to ComboBox
-       
+
         name = nameTxtField.getText();
         //this will check if the name is valid
         if (!name.matches("[a-zA-Z- ]+")) {
-            errorMessage.add("Please enter valid name");
+            errorMessage = "Please enter valid name\n";
         }
 
         number = numberTxtField.getText();
-        if(number.length() < 0 || number.length() > 10){
-            errorMessage.add("Please enter valid number");
+        if (number.length() < 0 || number.length() > 10) {
+            errorMessage = errorMessage + "Please enter valid number\n";
         }
-        
-        if(errorMessage.size() > 0){
-            String eMessages = null;
-            for(String message: errorMessage){
-                eMessages = eMessages +"\n"+message;
-            }
+
+        if (!errorMessage.equals("")) {
+            JOptionPane.showMessageDialog(null, errorMessage);
         }
     }//GEN-LAST:event_enterButtonActionPerformed
 
