@@ -140,11 +140,11 @@ public class AssignmentPhoneBook extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nameTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTxtFieldActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_nameTxtFieldActionPerformed
 
     private void contactListComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactListComboBoxActionPerformed
-        // TODO add your handling code here:
+        
 
     }//GEN-LAST:event_contactListComboBoxActionPerformed
 
@@ -182,8 +182,8 @@ public class AssignmentPhoneBook extends javax.swing.JFrame {
         } else {
             //getting the selected name, which is key of out HashMap
             String keyName = contactListComboBox.getSelectedItem().toString();
-            if(!contactList.isEmpty()){
-                JOptionPane.showMessageDialog(null,"Name: "+keyName+"\nNumber: "+contactList.get(keyName));
+            if (!contactList.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Name: " + keyName + "\nNumber: " + contactList.get(keyName));
             }
             //setting default to contactList
             contactListComboBox.setSelectedIndex(0);
