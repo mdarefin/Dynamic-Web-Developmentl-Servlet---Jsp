@@ -13,6 +13,8 @@ import javax.swing.JFrame;
  */
 public class AssignmentPhoneBook extends javax.swing.JFrame {
 
+    private static String name, number, errorMessage;
+
     /**
      * Creates new form AssignmentPhoneBook
      */
@@ -139,12 +141,16 @@ public class AssignmentPhoneBook extends javax.swing.JFrame {
 
     private void contactListComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactListComboBoxActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_contactListComboBoxActionPerformed
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
-        // Get the name 
-        
+        // Get the name and number from txtBox and add them to ComboBox
+        name = nameTxtField.getText();
+        if (!name.matches("[a-zA-Z- ]+")) {
+            errorMessage = errorMessage + "Please enter valid name\n";
+        }
+        number = numberTxtField.getText();
     }//GEN-LAST:event_enterButtonActionPerformed
 
     private void findButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findButtonActionPerformed
