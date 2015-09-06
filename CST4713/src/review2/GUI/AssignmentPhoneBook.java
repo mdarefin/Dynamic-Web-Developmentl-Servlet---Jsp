@@ -5,7 +5,8 @@
  */
 package review2.GUI;
 
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -15,7 +16,8 @@ import javax.swing.JOptionPane;
  */
 public class AssignmentPhoneBook extends javax.swing.JFrame {
 
-    private static String name, number, errorMessage;
+    private static String name, number, errorMessage = "";
+    private Map contactList = new HashMap();
 
     /**
      * Creates new form AssignmentPhoneBook
@@ -61,7 +63,7 @@ public class AssignmentPhoneBook extends javax.swing.JFrame {
 
         numberLabel.setText("Number:");
 
-        contactListComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Contact List", "Item 2", "Item 3", "Item 4" }));
+        contactListComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Contact List", " " }));
         contactListComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contactListComboBoxActionPerformed(evt);
@@ -162,11 +164,28 @@ public class AssignmentPhoneBook extends javax.swing.JFrame {
 
         if (!errorMessage.equals("")) {
             JOptionPane.showMessageDialog(null, errorMessage);
+        } else {
+            contactList.put(name, number);
+            contactListComboBox.addItem(name);
+            JOptionPane.showMessageDialog(null, "Contact is Entered Successfully");
         }
     }//GEN-LAST:event_enterButtonActionPerformed
 
     private void findButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findButtonActionPerformed
         // TODO add your handling code here:
+        // Reding ContactCombo list
+        if (contactListComboBox.getSelectedIndex() == -1 || contactListComboBox.getSelectedIndex() == 0) {
+            errorMessage = errorMessage + "Please select Contact";
+
+        } else {
+            
+            String keyName = contactListComboBox.getSelectedItem().toString();
+            if(!contactList.isEmpty()){
+                contactList.get(keyName);
+            }
+            JOptionPane.showMessageDialog(null,"Name: "+keyName+"\nNumber: "+contactList.get(keyName));
+
+        }
     }//GEN-LAST:event_findButtonActionPerformed
 
     /**
