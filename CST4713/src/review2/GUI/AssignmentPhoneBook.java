@@ -164,6 +164,8 @@ public class AssignmentPhoneBook extends javax.swing.JFrame {
 
         if (!errorMessage.equals("")) {
             JOptionPane.showMessageDialog(null, errorMessage);
+            nameTxtField.setText("");
+            numberTxtField.setText("");
         } else {
             contactList.put(name, number);
             contactListComboBox.addItem(name);
