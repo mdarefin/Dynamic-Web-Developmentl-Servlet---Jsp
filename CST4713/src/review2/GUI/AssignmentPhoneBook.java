@@ -158,9 +158,10 @@ public class AssignmentPhoneBook extends javax.swing.JFrame {
         }
 
         number = numberTxtField.getText();
-        if (number.length() < 0 || number.length() > 10) {
+        if ((number.length() < 0 || number.length() > 10)) {
             errorMessage = errorMessage + "Please enter valid number\n";
         }
+        
 
         if (!errorMessage.equals("")) {
             JOptionPane.showMessageDialog(null, errorMessage);
