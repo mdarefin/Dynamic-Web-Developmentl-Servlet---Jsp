@@ -1,2 +1,2 @@
 # Dynamic-Web-Developmentl-Servlet---Jsp
-This is a CityTech course CST4713 
+This repository explain how to work with webServer 
