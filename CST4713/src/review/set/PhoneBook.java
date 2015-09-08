@@ -33,4 +33,9 @@ public class PhoneBook {
         this.phoneNumber = phoneNumber;
     }
 
+    @Override
+    public String toString() {
+        return "PhoneBook{" + "name=" + name + ", phoneNumber=" + phoneNumber + '}';
+    }
+  
 }
