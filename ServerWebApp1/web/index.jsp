@@ -14,7 +14,7 @@
         <style>
             table {
                 width:50%;
-                float: center;
+                align: center;
             }
             table, th, td {
                 border: 1px solid black;
@@ -48,19 +48,24 @@
                 <th>Reading</th>
             </tr>
             <tr>
-                <td>Jill</td>
-                <td>Smith</td>		
-                <td>50</td>
+                <td>70<=ps<=90</td>
+                <td>40<=pd<=60</td>		
+                <td>Low Blood Pressure</td>
             </tr>
             <tr>
-                <td>Eve</td>
-                <td>Jackson</td>		
-                <td>94</td>
+                <td>90<ps<=120</td>
+                <td>60<pd<=80</td>		
+                <td>Ideal Blood Pressure</td>
             </tr>
             <tr>
-                <td>John</td>
-                <td>Doe</td>		
-                <td>80</td>
+                <td>120<ps<=140	</td>
+                <td>80<pd<=90</td>		
+                <td>Pre-High Blood Pressure</td>
+            </tr>
+            <tr>
+                <td>ps>140</td>
+                <td>pd>90</td>		
+                <td>High Blood Pressure</td>
             </tr>
         </table>
         <p>Today's date is <%=date%></p>
