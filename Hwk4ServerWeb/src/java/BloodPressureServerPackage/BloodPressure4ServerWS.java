@@ -5,7 +5,6 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 
-
 @WebService(serviceName = "BloodPressure4ServerWS")
 public class BloodPressure4ServerWS {
 
@@ -14,7 +13,16 @@ public class BloodPressure4ServerWS {
      */
     @WebMethod(operationName = "BloodPressureServerOp")
     public String BloodPressureServerOp(@WebParam(name = "inputps") double inputps, @WebParam(name = "inputpd") double inputpd) {
-        //TODO write your implementation code here:
-        return null;
+        
+        //crete string variable to hold BllodPressure 
+        String pressureStatus = "";
+        
+        //Check the pressure range input fall into
+        if(inputps >= 70 && inputps < 90){
+            if(inputpd >=40 && inputpd < 60){
+                pressureStatus = "low blood pressure";
+            }
+        }
+        return pressureStatus;
     }
 }
