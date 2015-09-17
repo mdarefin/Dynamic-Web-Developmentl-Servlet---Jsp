@@ -31,7 +31,12 @@ public class BloodPressure4ServerWS {
             }
         }
         
-        
+         //Check the pressure range input fall into Pre-High Blood Pressure
+        if(inputps >= 120 && inputps < 140){
+            if(inputpd >=80 && inputpd < 90){
+                pressureStatus = "Pre-High Blood Pressure";
+            }
+        }
         
         return "Your systolic pressure of "+ inputps+
                 " and your diastolic pressure of "+inputpd+
