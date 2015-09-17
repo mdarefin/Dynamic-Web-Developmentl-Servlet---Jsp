@@ -17,12 +17,22 @@ public class BloodPressure4ServerWS {
         //crete string variable to hold BllodPressure 
         String pressureStatus = "";
         
-        //Check the pressure range input fall into
+        //Check the pressure range input fall into low blood pressure 
         if(inputps >= 70 && inputps < 90){
             if(inputpd >=40 && inputpd < 60){
                 pressureStatus = "low blood pressure";
             }
         }
+        
+        //Check the pressure range input fall into Ideal Blood Pressure 
+        if(inputps >= 90 && inputps < 120){
+            if(inputpd >=60 && inputpd < 80){
+                pressureStatus = "Ideal Blood Pressure";
+            }
+        }
+        
+        
+        
         return "Your systolic pressure of "+ inputps+
                 " and your diastolic pressure of "+inputpd+
                 " Your Boold Pressure Status: "+pressureStatus;
