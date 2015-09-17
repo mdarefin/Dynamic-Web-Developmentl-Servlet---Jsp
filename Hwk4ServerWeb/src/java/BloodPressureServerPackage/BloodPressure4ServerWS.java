@@ -23,6 +23,8 @@ public class BloodPressure4ServerWS {
                 pressureStatus = "low blood pressure";
             }
         }
-        return pressureStatus;
+        return "Your systolic pressure of "+ inputps+
+                " and your diastolic pressure of "+inputpd+
+                " Your Boold Pressure Status: "+pressureStatus;
     }
 }
