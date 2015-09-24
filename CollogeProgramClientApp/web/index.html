@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+  Form that will gets user input (Program and Location)
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>College that offers graduate programs</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <h2>>College that offers graduate programs</h2>
+        <form action="CollegeForm.jsp">
+            Program: 
+            <input type="radio" name="RB" value="Master" required>Master
+            &nbsp;&nbsp;
+            <input type="radio" name="RB" value="Doctoral" required>Doctoral
+            &nbsp;&nbsp;
+            <br/>
+            Location:
+            <select name="locationList" required>
+                <option>Select a Location</option>
+                <option value="Brooklyn">Brooklyn</option>
+                <option value="Queens">Queens</option>
+                <option value="Manhattan">Manhattan</option>
+            </select>
+            <br/>
+
+            <input type="submit" value="Submit"/>
+
+        </form>
     </body>
 </html>
