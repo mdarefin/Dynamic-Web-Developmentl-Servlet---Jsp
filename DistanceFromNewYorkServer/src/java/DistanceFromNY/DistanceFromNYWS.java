@@ -15,21 +15,27 @@ public class DistanceFromNYWS {
      */
     @WebMethod(operationName = "operation")
     public String operation(@WebParam(name = "inputCity") String inputCity) {
-        
-        //creating a map with the key of city name and valu of distance 
-        Map cityDistance = new HashMap();
-        
-        cityDistance.put("Paris",3625);
-        cityDistance.put("London",3459);
-        cityDistance.put("Berlin",3965);
-        cityDistance.put("Mexico City",2625);
-        cityDistance.put("Rio de Janeiro",4808);
-        cityDistance.put("Lagos",5269);
-        cityDistance.put("Cairo",5607);
-        cityDistance.put("Jerusalem",5694);
-        cityDistance.put("Beijing",11012);
-        cityDistance.put("Tokyo",6737);
-        
+
+        String distance = "";
+
+        Map<String, Integer> cityDistance;
+        cityDistance = new HashMap<>();
+
+        cityDistance.put("Paris", 3625);
+        cityDistance.put("London", 3459);
+        cityDistance.put("Berlin", 3965);
+        cityDistance.put("Mexico City", 2625);
+        cityDistance.put("Rio de Janeiro", 4808);
+        cityDistance.put("Lagos", 5269);
+        cityDistance.put("Cairo", 5607);
+        cityDistance.put("Jerusalem", 5694);
+        cityDistance.put("Beijing", 11012);
+        cityDistance.put("Tokyo", 6737);
+
+        if (cityDistance.keySet().contains(inputCity)) {
+            return  inputCity+" "+cityDistance.get(inputCity)+" ";
+        }
+
         return null;
     }
 
