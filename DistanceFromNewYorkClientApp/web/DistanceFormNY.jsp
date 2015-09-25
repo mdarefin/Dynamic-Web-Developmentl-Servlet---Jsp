@@ -19,13 +19,23 @@
                 distancefromny.DistanceFromNYWS port = service.getDistanceFromNYWSPort();
                 // TODO initialize WS operation arguments here
                 java.lang.String inputCity = "";
-                if (inputCity != null) {
+
+                if (inputCity == " ") {
+
+                    String[] cityDistanceArray = request.getParameter(" ").split(",");
+
+                    for (int i = 0; i < cityDistanceArray.length; i++) {
+                        out.print(cityDistanceArray[i]);
+                    }
+
+                } else {
+                    
                     inputCity = request.getParameter("distanceList");
+
+                    String result = port.operation(inputCity);
+                    out.println("The Distance From New York to " + result);
                 }
-                
-                // TODO process result here
-                java.lang.String result = port.operation(inputCity);
-                out.println("The Distance From New York to " + result);
+
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
             }
