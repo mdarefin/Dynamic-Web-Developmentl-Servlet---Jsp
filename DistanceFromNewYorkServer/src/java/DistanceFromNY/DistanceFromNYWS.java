@@ -16,8 +16,8 @@ public class DistanceFromNYWS {
     @WebMethod(operationName = "operation")
     public String operation(@WebParam(name = "inputCity") String inputCity) {
 
-        String distance = "";
-
+        String cityDistanceFromNY = "";
+        
         Map<String, Integer> cityDistance;
         cityDistance = new HashMap<>();
 
@@ -33,10 +33,14 @@ public class DistanceFromNYWS {
         cityDistance.put("Tokyo", 6737);
 
         if (cityDistance.keySet().contains(inputCity)) {
-            return  inputCity+" "+cityDistance.get(inputCity)+" ";
+            return inputCity + " " + cityDistance.get(inputCity) + " ";
         }
 
-        return null;
+        for (String key : cityDistance.keySet()) {
+            cityDistanceFromNY = " "+key+" "+cityDistance.get(key)+" "+cityDistanceFromNY;
+        }
+        return cityDistanceFromNY;
+        
     }
 
 }
