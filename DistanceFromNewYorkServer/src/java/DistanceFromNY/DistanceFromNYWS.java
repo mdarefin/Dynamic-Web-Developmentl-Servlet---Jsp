@@ -37,7 +37,7 @@ public class DistanceFromNYWS {
         }
 
         for (String key : cityDistance.keySet()) {
-            cityDistanceFromNY = " "+key+" "+cityDistance.get(key)+" "+cityDistanceFromNY;
+            cityDistanceFromNY = " " + key + " " + cityDistance.get(key) + " " + cityDistanceFromNY;
         }
         return cityDistanceFromNY;
         
