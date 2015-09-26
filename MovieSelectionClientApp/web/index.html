@@ -6,11 +6,25 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Audio Selection</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <h2>Audio Selection</h2>
+        <form action="AudioForm.jsp">
+
+            Location:
+            <select name="audioList" required>
+                <option selected disabled value="">Select a Location</option>
+                <option value="Brooklyn">Lion Roaring</option>
+                <option value="Queens">Tiger Roaring</option>
+                <option value="Manhattan">Elephant Mother</option>
+            </select>
+            <br/>
+
+            <input type="submit" value="Submit"/>
+
+        </form>
     </body>
 </html>
