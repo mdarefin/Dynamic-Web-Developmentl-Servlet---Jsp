@@ -1,6 +1,7 @@
 //
 package MathOperationPackage;
 
+import java.text.DecimalFormat;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -28,7 +29,7 @@ public class MathOperationWS {
         if (inputChoice.equalsIgnoreCase("/")) {
             number = inputNumOne / inputNumTwo;
         }
-        return number;
+        return Double.parseDouble(new DecimalFormat("##.##").format(number)); 
     }
 
 }
