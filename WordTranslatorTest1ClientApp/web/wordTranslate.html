@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Word Translation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body  {
+                background-image: url("images/blue-christmas-snow-fall-animation.gif");
+                background-color: #cccccc;
+                color: #D8D8D8;
+            }
+        </style>
+        <script>
+            function validateForm()
+            {
+                var x = document.forms["wordFrom"]["engWord"].value;
+                var regex=/^[0-9]+$/;
+                if (isNumeric(x) || x.match(regex))
+                {
+                    alert("input must be latter");
+                    return false;
+                }
+            }
+            function isNumeric(n) {
+                return !isNaN(parseFloat(n)) && isFinite(n);
+            }
+        </script>
+
+    </head>
+    <body>
+        <br><br><br>
+        <h1>Word Translation</h1>
+        <form name="wordFrom" action="WordTranslation.jsp" onsubmit="return validateForm()" method="post">
+
+            Enter Word: <input type="text" name="engWord" required> <br/>
+            language :
+            <select name="languageList" required>
+                <option selected disabled value="">Select desire operation</option>
+                <option value="Arabic">Arabic</option>
+                <option value="Chinese">Chinese</option>
+                <option value="French">French</option>
+                <option value="German">German</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Portuguese">Portuguese</option>
+            </select>
+            <br/>
+            <br/>
+
+            <input type="submit" value="Submit" 
+                   style="background-color:#F78181;margin-left:auto;margin-right:auto;display:block;margin-top:10%;margin-bottom:0%">
+
+        </form>
+    </body>
+</html>
