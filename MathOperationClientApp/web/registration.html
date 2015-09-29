@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Citytech IEEE Club: Registration</title>
+        <link rel= "stylesheet" type="text/css" href="styles/style.css">
+        <style>
+
+        </style>
+    </head>		
+
+    <body>
+        <h1 align="left">Registration for IEEE Club</h1> <hr>
+        <nav id="nav_bar">
+            <ul>
+                <!-- Google Search -->
+                <form id="search" method="get" action="http://www.google.com/search">
+                    <input type="search" name="q" size="30" maxlength="255">
+                    <input type="submit" name="search" value="Search">
+
+                </form>
+                <!-- Google Search -->
+                <li> <a href="index.html"> HOME </a> </li>
+                <li> <a href="registration.html"> REGISTRATION</a></li>
+
+            </ul>
+        </nav>
+        <figure>
+            <figcaption>IEEE Club Budget</figcaption>
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2">Book</th>
+                        <th colspan="4" id="sales">Project</th>
+                    </tr>
+                    <tr id="hdr_row_2">
+                        <th>North</th>
+                        <th>South</th>
+                        <th>West</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PHP and MySQL</td>
+                        <td>$55,174</td>
+                        <td>$73,566</td>
+                        <td>$177,784</td>
+                        <td>$306,524</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript and DOM Scripting</td>
+                        <td>$28,775</td>
+                        <td>$24,349</td>
+                        <td>$168,228</td>
+                        <td>$221,352</td>
+                    </tr>
+                    <tr>
+                        <td>Java Programming</td>
+                        <td>$27,688</td>
+                        <td>$39,995</td>
+                        <td>$239,968</td>
+                        <td>$307,651</td>
+                    </tr>
+                    <tr>
+                        <td>Java Servlets and JSP</td>
+                        <td>$23,082</td>
+                        <td>$24,858</td>
+                        <td>$129,619</td>
+                        <td>$177,559</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th id="total">Sales Totals</th>
+                        <td>$140,775</td>
+                        <td>$165,550</td>
+                        <td>$762,794</td>
+                        <td>$1,069,119</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </figure>
+        <div id="alignment">
+            <form action="do" method="get"> 
+                <label>Prefix:</label> 
+                <select id="time">
+                    <option value="time1"> Mr.</option>
+                    <option value="time1"> Ms.</option>
+                    <option value="time1"> Miss</option>
+                    <option value="time1"> Mrs.</option>
+                </select> <br>
+
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" id="first_name" required><br>
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" id="last_name" required><br>
+                <label for="address">Address:</label>
+                <input type="text" name="address" id="address"><br>
+                <label for="city">City:</label>
+                <input type="text" name="city" id="city" required><br>
+                <label for="state">State:</label>
+                <input type="text" name="state" id="state" required maxlength="2" placeholder="2-character code"><br>
+                <label for="zip">ZIP Code:</label>
+                <input type="text" name="zip" id="zip" required placeholder="5 or 9 digits" 
+                       pattern="^\d{5}(-\d{4})?$" title="Either 5 or 9 digits"><br>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" name="phone" id="phone" placeholder="999-999-9999" 
+                       pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="Must be 999-999-999 format"><br>
+
+
+                <label>Date and time:&nbsp;&nbsp;</label>
+                <input type="datetime" name="datetime"><br>
+                <label>Local date and time:&nbsp;&nbsp;</label>
+                <input type="datetime-local" name="datetimelocal"><br>
+                <label>Month:&nbsp;&nbsp;</label>
+                <input type="month" name="month"><br>
+                <label>Week:&nbsp;&nbsp;</label>
+                <input type="week" name="week"><br>
+                <label>Time:&nbsp;&nbsp;</label>
+                <input type="time" name="time"><br>
+                <label>Date:&nbsp;&nbsp;</label>
+                <input type="date" name="date"><br>
+
+
+                <label> Major:</label> 
+                <div id="major">
+                    <input type="radio" name="major" value="Computer Systems Technology (CST)">Computer Systems Technology (CST) <br>
+                    <input type="radio" name="major" value="Computer Engineering Technology (CET)">Computer Engineering Technology (CET) <br>
+                    <input type="radio" name="major" value="Computer Engineering Technology (CET)">Electrical Engineering Technology (EET) <br>
+                    <input type="radio" name="major" value="Computer Engineering Technology (CET)">Telecommunications (TC) <br>
+                </div><br>
+
+
+
+
+                <label>comments:</label> 
+                <textarea name="instruction" rows="6" cols="20">
+				Type Your Comments Here
+                </textarea> <br>
+
+
+                <input type="submit" name="register" id="button" value="Submit">
+                <input type="reset" name="reset"> <br><br>
+
+            </form>
+
+
+        </div>
+        <hr>
+
+        <nav > <a href="index.html">Home</a> <a href="registration.html"> <a>Registration</a> <div align="right"> Designed by Student (Md Arefin) </div>	</nav>
+
+    </body>
+</html>

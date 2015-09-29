@@ -32,6 +32,10 @@
             }
         %>
         <%-- end web service invocation --%><hr/>
-
+        
+            
+         <a href="basicMath.html"> Back to the function </a>
+            
+        
     </body>
 </html>

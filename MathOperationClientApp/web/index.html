@@ -1,29 +1,52 @@
 <!DOCTYPE html>
-
 <html>
     <head>
-        <title>Math Operation</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Math Cracker</title>
+        <link rel= "stylesheet" type="text/css" href="styles/style.css">
+        <!--<style>body
+      {
+              background-color:white;
+              font-family: Arial;
+              font-size: 72.5%;
+              width: 1000px;
+              margin: 0 auto;
+              padding: 1em;
+              border: 2px solid yellow;
+              
+      }</style>-->
     </head>
+
     <body>
-        <h1>Math Operation</h1>
-        <form action="MathOperationJSP.jsp">
+        <img src="images/logo.png"  width="360" height="75" align="left" hspace="10"> <br><br> <br>
+        <br> <br>
+        <nav id="nav_bar">
+            <ul>
+                <!-- Google Search -->
+                <form id="search" method="get" action="http://www.google.com/search">
+                    <input type="search" name="q" size="30" maxlength="255">
+                    <input type="submit" name="search" value="Search">
 
-            First number <input type="text" name="firstnum">
-                      
-            <select name="operationList" required>
-                <option selected disabled value="">Select any below operation</option>
-                <option value="+">+</option>
-                <option value="-">-</option>
-                <option value="*">*</option>
-                <option value="/">/</option>
-            </select>
-            
-            Last number <input type="text" name="secondnum">
+                </form>
+                <!-- Google Search -->
+                <li> <a href="index.html"> HOME </a> </li>
+                <li> <a href="registration.html"> REGISTRATION</a></li>
+            </ul>
+        </nav>
+        <h1> Welcome to the Math Cracker. You have the number, we have the result.</h1>
+        
+        <hr>  
+        <iframe src="basicMath.html" style="overflow: auto; background-color: #2E9AFE" frameBorder="0" width="323" height="400"></iframe> 
+        <iframe src="basicMath.html" style="overflow: auto; background-color: #2E9AFE" frameBorder="0" width="323" height="400"></iframe> 
+        <iframe src="basicMath.html" style="overflow: auto; background-color: #2E9AFE" frameBorder="0" width="323" height="400"></iframe> 
 
-            <input type="submit" value="Submit"/>
+        <p>Please join our club by filling out the <a href="registration.html">Registration</a> form<br>
+            You are welcome to contact us by e-mail at <a href="mailto:md.arefin@mail.citytech.cuny.edu">md.arefin@citytech.cuny.edu</a>
+        </p><br><br><br>
+        
+        <hr>
+        <nav > <a href="index.html">Home</a> <a href="registration.html">Registration</a> <div align="right"> Designed by Student (Md Arefin) </div>	</nav>
 
-        </form>
+
     </body>
 </html>
