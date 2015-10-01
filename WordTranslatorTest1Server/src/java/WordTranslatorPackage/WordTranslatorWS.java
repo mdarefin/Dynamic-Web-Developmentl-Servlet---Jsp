@@ -33,6 +33,7 @@ public class WordTranslatorWS {
         languageList.add(Chinese);
         languageList.add(French);
         languageList.add(Hindi);
+        languageList.add(German);
         languageList.add(Japanese);
         languageList.add(Spanish);
         languageList.add(Portuguese);
