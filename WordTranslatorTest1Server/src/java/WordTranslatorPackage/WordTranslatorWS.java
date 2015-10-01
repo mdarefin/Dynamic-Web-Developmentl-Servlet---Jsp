@@ -38,13 +38,13 @@ public class WordTranslatorWS {
         languageList.add(Spanish);
         languageList.add(Portuguese);
 
-        for (String[] langue : languageList) {
-            for (String langue1 : langue) {
-                if (langue1.equalsIgnoreCase(inputLanguage)) {
-                    if (inputWord.equalsIgnoreCase("Thank you ")) {
-                        translation = langue[1];
+        for (String[] languageArray : languageList) {
+            for (String word : languageArray) {
+                if (word.equalsIgnoreCase(inputLanguage)) {
+                    if (inputWord.equalsIgnoreCase("Thank you")) {
+                        translation = languageArray[1];
                     } else if (inputWord.equalsIgnoreCase("Good Morning")) {
-                        translation = langue[2];
+                        translation = languageArray[2];
                     }
 
                 }
