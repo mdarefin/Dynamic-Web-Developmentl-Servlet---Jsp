@@ -2,4 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8080/MathOperationServer/MathOperationWS?wsdl" uri="wsdl/localhost_8080/MathOperationServer/MathOperationWS.wsdl"/>
     <system systemId="http://localhost:8080/MathOperationServer/MathOperationWS?xsd=1" uri="wsdl/localhost_8080/MathOperationServer/MathOperationWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WordTranslatorTest1Server/WordTranslatorWS?wsdl" uri="wsdl/localhost_8080/WordTranslatorTest1Server/WordTranslatorWS.wsdl"/>
+    <system systemId="http://localhost:8080/WordTranslatorTest1Server/WordTranslatorWS?xsd=1" uri="wsdl/localhost_8080/WordTranslatorTest1Server/WordTranslatorWS.xsd_1.xsd"/>
 </catalog>

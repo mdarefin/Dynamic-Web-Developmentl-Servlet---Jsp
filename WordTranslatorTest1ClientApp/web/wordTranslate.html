@@ -15,17 +15,15 @@
         <script>
             function validateForm()
             {
-                var x = document.forms["wordFrom"]["engWord"].value;
-                var regex=/^[0-9]+$/;
-                if (isNumeric(x) || x.match(regex))
+                var word = document.forms["wordFrom"]["engWord"].value;
+                
+                if (!(word.toUpperCase() == "THANK YOU" || word.toUpperCase() == "GOOD MORNING"))
                 {
-                    alert("input must be latter");
+                    alert("Please enter Thank you or Good Morning to see the translation in listed language");
                     return false;
                 }
             }
-            function isNumeric(n) {
-                return !isNaN(parseFloat(n)) && isFinite(n);
-            }
+            
         </script>
 
     </head>
@@ -34,7 +32,7 @@
         <h1>Word Translation</h1>
         <form name="wordFrom" action="WordTranslation.jsp" onsubmit="return validateForm()" method="post">
 
-            Enter Word: <input type="text" name="engWord" required> <br/>
+            Enter Word: <input type="text" name="engWord" required pattern="[^0-9]+"> <br/>
             language :
             <select name="languageList" required>
                 <option selected disabled value="">Select desire operation</option>

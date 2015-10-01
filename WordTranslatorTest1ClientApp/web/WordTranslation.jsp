@@ -13,22 +13,23 @@
     </head>
     <body>
         <h1>Translated Word</h1>
-            <%-- start web service invocation --%><hr/>
-    <%
-    try {
-	wordtranslatorpackage.WordTranslatorWS_Service service = new wordtranslatorpackage.WordTranslatorWS_Service();
-	wordtranslatorpackage.WordTranslatorWS port = service.getWordTranslatorWSPort();
-	 // TODO initialize WS operation arguments here
-	java.lang.String inputWordEng = request.getParameter("engWord");
-	java.lang.String inputWordTranslet = request.getParameter("languageList");
-	// TODO process result here
-	java.lang.String result = port.languaeOperation(inputWordEng, inputWordTranslet);
-	out.println("English Word "+inputWordEng+" translated to "+inputWordTranslet+" is "+result);
-    } catch (Exception ex) {
-	// TODO handle custom exceptions here
-    }
-    %>
-    <%-- end web service invocation --%><hr/>
+        <%-- start web service invocation --%><hr/>
+        <%
+            try {
+                wordtranslatorpackage.WordTranslatorWS_Service service = new wordtranslatorpackage.WordTranslatorWS_Service();
+                wordtranslatorpackage.WordTranslatorWS port = service.getWordTranslatorWSPort();
+                // TODO initialize WS operation arguments here
+                java.lang.String inputWord = request.getParameter("engWord");
+                java.lang.String inputLanguage = request.getParameter("languageList");
+                // TODO process result here
+                java.lang.String result = port.languaeOperation(inputWord, inputLanguage);
+                out.println("The English Word " + inputWord + " in " + inputLanguage + " is " + result);
+            } catch (Exception ex) {
+                // TODO handle custom exceptions here
+            }
+        %>
+        <%-- end web service invocation --%><hr/>
+    <li> <a href="wordTranslate.html"> Go Back </a> </li>
 
-    </body>
+</body>
 </html>
