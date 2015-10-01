@@ -14,6 +14,7 @@
         <h1>College that offers graduate programs</h1>
 
         <%-- start web service invocation --%><hr/>
+        
         <%
             try {
                 collogeprogramserverpackage.CollogeProgramWS_Service service = new collogeprogramserverpackage.CollogeProgramWS_Service();
@@ -25,11 +26,13 @@
 
                 // passing input to the operation
                 java.lang.String result = port.collogeProgramOp(inputProgram, inputLocation);
+
                 out.println("Result = " + result);
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
             }
         %>
+
         <%-- end web service invocation --%><hr/>
     </body>
 </html>
