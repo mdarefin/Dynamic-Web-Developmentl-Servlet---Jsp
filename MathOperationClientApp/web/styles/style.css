@@ -89,7 +89,7 @@ body
 #nav_bar ul{
 	list-style: none;
 	padding: 1em 0;       /* padding above and below li elements */
-	background-color: blue;	
+	background-color: #FE2E2E;	
 }
 #nav_bar li {
 	display: inline; 
