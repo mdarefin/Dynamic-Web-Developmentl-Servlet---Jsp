@@ -32,6 +32,10 @@ public class WordTranslatorWS {
         languageList.add(Arabic);
         languageList.add(Chinese);
         languageList.add(French);
+        languageList.add(Hindi);
+        languageList.add(Japanese);
+        languageList.add(Spanish);
+        languageList.add(Portuguese);
 
         for (String[] langue : languageList) {
             for (String langue1 : langue) {
