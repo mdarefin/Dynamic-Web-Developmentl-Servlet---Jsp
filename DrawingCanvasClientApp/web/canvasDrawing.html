@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Word Translation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body  {
+                background-image: url("images/blue-christmas-snow-fall-animation.gif");
+                background-color: #cccccc;
+                color: #D8D8D8;
+            }
+        </style>
+        <script>
+            function validateForm()
+            {
+                var word = document.forms["canvasFrom"]["shapeList"].value;
+                
+                if (!(word.toUpperCase() == "THANK YOU" || word.toUpperCase() == "GOOD MORNING"))
+                {
+                    alert("Please enter Thank you or Good Morning to see the translation in listed language");
+                    return false;
+                }
+            }
+            
+        </script>
+
+    </head>
+    <body>
+        <br><br><br>
+        <h1>Word Translation</h1>
+        <form name="canvasFrom" action="WordTranslation.jsp" onsubmit="return validateForm()" method="post">
+
+            Select Shapes: 
+            <select name="shapeList" required>
+                <option selected disabled value="">Select desire operation</option>
+                <option value="line">line</option>
+                <option value="arc">arc</option>
+                <option value="triangle">triangle</option>
+                <option value="square">square</option>
+            </select>
+            
+            Select Color: 
+            <select name="colorList" required>
+                <option selected disabled value="">Select desire operation</option>
+                <option value="red">red</option>
+                <option value="blue">blue</option>
+                <option value="green">green</option>
+            </select>
+            
+            <br/>
+            
+            <br/>
+
+            <input type="submit" value="Submit" 
+                   style="background-color:#F78181;margin-left:auto;margin-right:auto;display:block;margin-top:10%;margin-bottom:0%">
+
+        </form>
+    </body>
+</html>
