@@ -22,7 +22,7 @@ public class DrawingCanvasWS {
         
         //selecting the shape color that need to be draw in the server side 
         List<String> shapeList = Arrays.asList("line", "arc", "triangle","square");
-        List<String> colorList = Arrays.asList("red","white","blue","red","black");
+        List<String> colorList = Arrays.asList("red","green","blue");
         
         if(shapeList.contains(shapes.toLowerCase()) && colorList.contains(color.toLowerCase())){
            colorAndShape = shapes+" "+color ; 
