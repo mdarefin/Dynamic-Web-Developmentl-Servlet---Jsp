@@ -11,7 +11,8 @@ import javax.jws.WebParam;
 public class WordTranslatorWS {
 
     /**
-     * Web service operation
+     * This WebService contains Language arrays holding translated word 
+     * It will give options to translate "Thank you" and "Good morning" to given languages
      */
     @WebMethod(operationName = "languaeOperation")
     public String languaeOperation(@WebParam(name = "inputWord") String inputWord, @WebParam(name = "inputLanguage") String inputLanguage) {
