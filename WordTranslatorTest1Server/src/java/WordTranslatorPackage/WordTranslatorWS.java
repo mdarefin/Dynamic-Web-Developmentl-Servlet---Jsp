@@ -11,8 +11,9 @@ import javax.jws.WebParam;
 public class WordTranslatorWS {
 
     /**
-     * This WebService contains Language arrays holding translated word 
-     * It will give options to translate "Thank you" and "Good morning" to given languages
+     * This WebService contains Language arrays holding translated word It will
+     * give options to translate "Thank you" and "Good morning" to given
+     * languages
      */
     @WebMethod(operationName = "languaeOperation")
     public String languaeOperation(@WebParam(name = "inputWord") String inputWord, @WebParam(name = "inputLanguage") String inputLanguage) {
@@ -29,6 +30,8 @@ public class WordTranslatorWS {
         String[] Japanese = {"Japanese", "domo", "ohayo gozaimasu"};
         String[] Spanish = {"Spanish", "gracias", "buenos dias"};
         String[] Portuguese = {"Portuguese", "obrigado", "bom dia"};
+
+       // languageList.add(new Languages("Shukran", Arabic));
 
         languageList.add(Arabic);
         languageList.add(Chinese);
@@ -52,8 +55,47 @@ public class WordTranslatorWS {
 
             }
         }
-
+//        //Approach while parshing through jason data. 
+//        int THANK_YOU = 0;
+//        int GOOD_MORNING = 1;
+//
+//        for (Languages l : languageList) {
+//            if (l.getLanguage().equalsIgnoreCase(inputLanguage)) {
+//                String s = l.getWords()[THANK_YOU];
+//                translation = "Thank you";
+//            }
+//            return l.getWords()[THANK_YOU];
+//        }
         return translation;
+
+    }
+
+    //different approch while prashing through jason data
+    public class Languages {
+
+        String language;
+        String[] words;
+
+        public Languages(String language, String[] words) {
+            this.language = language;
+            this.words = words;
+        }
+
+        public String getLanguage() {
+            return language;
+        }
+
+        public void setLanguage(String language) {
+            this.language = language;
+        }
+
+        public String[] getWords() {
+            return words;
+        }
+
+        public void setWords(String[] words) {
+            this.words = words;
+        }
 
     }
 
