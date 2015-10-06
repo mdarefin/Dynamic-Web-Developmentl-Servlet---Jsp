@@ -29,7 +29,7 @@
 
                 // TODO process result here
                 java.lang.String result = port.operation(inputSound);
-                out.println("Result = " + result);
+                out.println(" " + result);
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
             }
