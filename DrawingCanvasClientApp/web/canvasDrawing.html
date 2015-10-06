@@ -6,31 +6,36 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            body  {
+/*            body  {
                 background-image: url("images/blue-christmas-snow-fall-animation.gif");
                 background-color: #cccccc;
                 color: #D8D8D8;
-            }
+            }*/
         </style>
         <script>
-            function validateForm()
+            function canvasForm()
             {
-                var word = document.forms["canvasFrom"]["shapeList"].value;
-                
-                if (!(word.toUpperCase() == "THANK YOU" || word.toUpperCase() == "GOOD MORNING"))
-                {
-                    alert("Please enter Thank you or Good Morning to see the translation in listed language");
-                    return false;
-                }
+                var shape = document.forms["canvasFrom"]["shapeList"].value;
+                var color = document.forms["canvasFrom"]["colorList"].value;
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+
+
+                // Blue rectangle
+                ctx.beginPath();
+                ctx.lineWidth = "10";
+                ctx.strokeStyle = "blue";
+                ctx.rect(50, 50, 150, 80);
+                ctx.stroke();
             }
-            
+
         </script>
 
     </head>
     <body>
         <br><br><br>
-        <h1>Word Translation</h1>
-        <form name="canvasFrom" action="WordTranslation.jsp" onsubmit="return validateForm()" method="post">
+        <h1>Drawing Canvas </h1>
+        <form name="canvasFrom"  onsubmit="return canvasForm()" method="post">
 
             Select Shapes: 
             <select name="shapeList" required>
@@ -40,17 +45,20 @@
                 <option value="triangle">triangle</option>
                 <option value="square">square</option>
             </select>
-            
-            Select Color: 
+            <br/>
+            Select Colors:  
             <select name="colorList" required>
                 <option selected disabled value="">Select desire operation</option>
                 <option value="red">red</option>
                 <option value="blue">blue</option>
                 <option value="green">green</option>
             </select>
-            
+
             <br/>
-            
+            <canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+            </canvas>
+
+
             <br/>
 
             <input type="submit" value="Submit" 

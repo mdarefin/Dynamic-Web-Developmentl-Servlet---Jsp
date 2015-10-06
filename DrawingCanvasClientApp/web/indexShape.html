@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body  {
+                background-image: url("images/blue-christmas-snow-fall-animation.gif");
+                background-color: #cccccc;
+                color: #D8D8D8;
+            }
+        </style>
+    </head>
+    <body>
+
+
+
+
+        <br><br><br>
+        <h1>Drawing Canvas </h1>
+
+
+        <br/>
+
+        <canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+
+        </canvas>
+        <br/>
+
+        <button onclick="canvasFunctionRec()" >Square</button>
+                <button onclick="canvasFunctionArc()" >Arc</button>
+                        <button onclick="canvasFunctionLine()" >Line</button>
+                                <button onclick="canvasFunctionTriangle()" >Triangle</button>
+                                    <button onclick="canvasFunctionClear()" >Clear</button>
+
+                                        <script>
+
+                                            //this function create rectangle
+                                            function canvasFunctionRec() {
+                                                var c = document.getElementById("myCanvas");
+                                                var ctx = c.getContext("2d");
+
+                                                ctx.beginPath();
+                                                ctx.lineWidth = "10";
+                                                ctx.strokeStyle = "red";
+                                                ctx.rect(50, 30, 100, 100);
+                                                ctx.stroke();
+                                            }
+                                            //this function create arc
+                                            function canvasFunctionArc() {
+                                                var c = document.getElementById("myCanvas");
+                                                var ctx = c.getContext("2d");
+
+                                                var c = document.getElementById("myCanvas");
+                                                var ctx = c.getContext("2d");
+                                                ctx.beginPath();
+                                                ctx.lineWidth = "10";
+                                                ctx.strokeStyle = "red";
+                                                ctx.arc(100, 75, 50, 0, 1 * Math.PI);
+                                                ctx.stroke();
+
+                                            }
+
+                                            //this function draw line
+                                            function canvasFunctionLine() {
+                                                var c = document.getElementById("myCanvas");
+                                                var ctx = c.getContext("2d");
+
+                                                var c = document.getElementById("myCanvas");
+                                                var ctx = c.getContext("2d");
+                                                ctx.beginPath();
+                                                ctx.lineWidth = "10";
+                                                ctx.strokeStyle = "red";
+                                                ctx.moveTo(0, 0);
+                                                ctx.lineTo(300, 150);
+                                                ctx.stroke();
+
+                                            }
+
+                                            //this function draw triangle
+                                            function canvasFunctionTriangle() {
+                                                var c = document.getElementById("myCanvas");
+                                                var ctx = c.getContext("2d");
+
+                                                var c = document.getElementById("myCanvas");
+                                                var ctx = c.getContext("2d");
+                                                ctx.beginPath();
+                                                ctx.lineWidth = "10";
+                                                ctx.strokeStyle = "red";
+                                                ctx.moveTo(0, 0);
+                                                ctx.triangle(30, 75, 58, 20, 86, 75);
+                                                ctx.stroke();
+
+                                            }
+                                            //this function clear the canvasƒ
+                                             function canvasFunctionClear() {
+                                                var c = document.getElementById("myCanvas");
+                                                var ctx = c.getContext("2d");
+
+                                                var c = document.getElementById("myCanvas");
+                                                var ctx = c.getContext("2d");
+                                                ctx.clearRect(0, 0, c.width, c.height);
+
+                                            }
+
+
+                                        </script> 
+                                        </body>
+                                        </html>
