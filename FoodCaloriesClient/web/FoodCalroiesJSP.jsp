@@ -9,10 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Know your Food</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Know Your Food!</h1>
         
         
     <%-- start web service invocation --%><hr/>
@@ -21,7 +21,7 @@
 	foodcaloriespackage.FoodCalorisWS_Service service = new foodcaloriespackage.FoodCalorisWS_Service();
 	foodcaloriespackage.FoodCalorisWS port = service.getFoodCalorisWSPort();
 	 // TODO initialize WS operation arguments here
-	java.lang.String inputFoodIteam = "";
+	java.lang.String inputFoodIteam = request.getParameter("fdRadio");
 	// TODO process result here
 	java.lang.String result = port.foodCarbServerOP(inputFoodIteam);
 	out.println("Result = "+result);
