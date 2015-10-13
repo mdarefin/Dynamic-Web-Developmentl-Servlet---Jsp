@@ -6,11 +6,27 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Buy Stock</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <h1>Buy Stock</h1>
+        <form action="StockClientJSP.jsp">
+            Price Range:<br/>
+            
+            <select name ="pricelist" required="">
+                <option value="" selected disabled> Select a Price Range</option>
+                <option value="lt50"> Less than $50</option>
+                <option value="gte50lt100"> Between $50 and $100</option>
+                <option value="gte100lt200"> Between $100 and $200</option>
+                <option value="gte200"> Greater than 200</option>
+                
+            </select><br/>
+            
+            <input type="submit" value="Submit"/>
+            
+        </form>
+        
     </body>
 </html>
