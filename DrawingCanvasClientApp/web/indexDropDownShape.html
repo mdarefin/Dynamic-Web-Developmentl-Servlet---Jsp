@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body  {
+                background-image: url("images/blue-christmas-snow-fall-animation.gif");
+                background-color: #cccccc;
+                color: #D8D8D8;
+            }
+        </style>
+        <script type="text/javascript">
+            function draw()
+            {
+                //reading user selection figure
+                selectedFigure = document.Hwk8Form.figureList.value;
+                //criating a canvas object of the type myCanvas
+                var userCanvas = document.getElementById("myCanvas");
+                //getting canvas width and height (both set at the <canvas> tag)
+                canvasWidth = userCanvas.width;
+                canvasHeight = userCanvas.height;
+                //creating a context
+                var context = userCanvas.getContext("2d");
+                if (selectedFigure == "rectangle")
+                {
+                    //clearing canvas
+                    context.clearRect(0, 0, canvasWidth, canvasHeight);
+                    //setting the color to black
+                    context.strokeStyle = "rgb(0,0,0)";
+                    context.lineWidth = 1;
+                    //drawing a line at the top of the canvas
+                    context.beginPath();
+                    context.moveTo(0, 0);
+                    context.lineTo(canvasWidth, 0);
+                    context.stroke();
+                    //putting a title onto the canvas
+                    //setting the font
+                    context.font = "48px serif";
+                    //write the title
+                    context.strokeText("Learning Canvas", 10, 40);
+                    //drawing the rectangle
+                    context.strokeRect(10, 60, 100, 100);
+                    //drawing a filled rectangle with green color
+                    //setting color to green
+                    context.fillStyle = 'rgb(0,255,0)';
+                    context.fillRect(10, 180, 100, 100);
+                }
+                else
+                if (selectedFigure == "triangle")
+                {
+                    //clearing canvas
+                    context.clearRect(0, 0, canvasWidth, canvasHeight);
+                    //setting color to black
+                    context.strokeStyle = "black";
+                    context.lineWidth = 1;
+                    //drawing a line at the top of the canvas
+                    context.beginPath();
+                    context.moveTo(0, 0);
+                    context.lineTo(canvasWidth, 0);
+                    context.stroke();
+                    //putting a title onto the canvas
+                    //setting the font
+                    context.font = "48px serif";
+                    //write the title
+                    context.strokeText("Learning Canvas", 10, 40);
+                    //drawing a red triangle
+                    //setting red color
+                    context.fillStyle = "rgb(255,0,0)";
+                    context.beginPath();
+                    context.moveTo(200, 100);
+                    context.lineTo(100, 300);
+                    context.lineTo(300, 300);
+                    context.lineTo(200, 100);
+                    context.fillStyle = 'red';
+                    context.fill();
+                    context.stroke();
+                    context.closePath();
+                }
+                else
+                if (selectedFigure == "circle")
+                {
+                    //clearing canvas
+                    context.clearRect(0, 0, canvasWidth, canvasHeight);
+                    //setting color to black
+                    context.strokeStyle = "rgb(0,0,0)";
+                    //drawing a line at the top of the canvas
+                    context.beginPath();
+                    context.moveTo(0, 0);
+                    context.lineTo(canvasWidth, 0);
+                    context.stroke();
+                    //putting a title onto the canvas
+                    //setting the font
+                    context.font = "48px serif";
+                    //write the title
+                    context.strokeText("Learning Canvas", 10, 40);
+                    //drawing a circle at the quarter center of the canvas
+                    var centerX = canvasWidth / 2;
+                    var centerY = canvasHeight / 2;
+                    var radius = 70;
+                    context.beginPath();
+                    context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+                    context.fillStyle = 'red';
+                    context.fill();
+                    context.lineWidth = 5;
+                    context.strokeStyle = '#003300';
+                    context.stroke(); //draw it
+                }
+                else
+                if (selectedFigure == "line")
+                {
+                    //clearing canvas
+                    context.clearRect(0, 0, canvasWidth, canvasHeight);
+                    //setting color to black
+                    context.strokeStyle = "rgb(0,0,0)";
+                    //drawing a line at the top of the canvas
+                    context.beginPath();
+                    context.moveTo(0, 0);
+                    context.lineTo(canvasWidth, 0);
+                    context.stroke(); //draw it
+                    //putting a title onto the canvas
+                    //setting the font
+                    context.font = "48px serif";
+                    //write the title
+                    context.strokeText("Learning Canvas", 10, 40);
+                    //setting color to purple
+                    context.strokeStyle = "purple";
+                    //drawing a purple line of width 5
+                    context.lineWidth = "5";
+                    context.beginPath();
+                    context.moveTo(50, 100);
+                    context.lineTo(150, 250);
+                    context.stroke(); // Draw it
+                }
+            }
+
+            //this function clear the canvasƒ
+            function canvasFunctionClear() {
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.clearRect(0, 0, c.width, c.height);
+
+            }
+
+        </script>
+    </head>
+    <body>
+
+
+
+
+        <br>
+        <h1>Drawing Canvas </h1>
+
+
+        <br/>
+
+
+        <form name="Hwk8Form">
+            Select a Figure:
+            <select name="figureList" required onchange="draw();">
+                <option value="">Select a Figure</option>
+                <option value="rectangle">Rectangle</option>
+                <option value="triangle">Triangle</option>
+                <option value="circle">Circle</option>
+                <option value="line">Line</option>
+            </select>
+        </form>
+        <p></p>
+        <!-- placeholder for canvas -->
+        <canvas id="myCanvas" width="300" height="300" style="border:1px solid #d3d3d3;"></canvas>
+
+
+
+        <button onclick="canvasFunctionClear()" >Clear</button>
+
+        <script>
+
+
+
+        </script> 
+    </body>
+</html>
