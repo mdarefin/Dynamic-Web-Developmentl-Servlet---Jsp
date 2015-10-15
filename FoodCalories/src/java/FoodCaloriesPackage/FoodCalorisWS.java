@@ -23,10 +23,10 @@ public class FoodCalorisWS {
         
         //creating a list of food iteam
         Map foodList = new HashMap();
-        foodList.put("Milk", "Sugar 14 gr - Carb 11 g");
-        foodList.put("Beer", "Sugar 150	gr - Carb 13 g");
-        foodList.put("Soda", "Sugar 39	gr - Carb 36 g");
-        foodList.put("Bread", "Sugar 40	gr - Carb 24 g");
+        foodList.put("Milk", "14-11");
+        foodList.put("Beer", "150-13");
+        foodList.put("Soda", "39-36");
+        foodList.put("Bread", "40-24");
         
         if(foodList.containsKey(inputFoodIteam)){
             return  inputFoodIteam+"-"+ foodList.get(inputFoodIteam);
