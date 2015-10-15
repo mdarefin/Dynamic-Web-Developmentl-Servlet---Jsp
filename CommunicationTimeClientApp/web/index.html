@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Life Span Communicate Hours </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <h1>Life Span Communicate Hours</h1>
+        <form action="CommunicationJSP.jsp">
+
+            Enter Your Date of Birth <input type="text" name="dob" required pattern="[0-9]+"> <br/>
+            Enter Your Desire Age to retire<input type="text" name="retireAge" required pattern="[0-9]+"> <br/>
+            Communication time:<br/>
+            <select name ="hours" required="">
+                <option value="" selected disabled> Select your daily communicate time</option>
+                <option value="1"> 1 HR</option>
+                <option value="2"> 2 HR</option>
+                <option value="3"> 3 HR</option>
+                <option value="4"> 4 HR</option>
+                <option value="5"> 5 HR</option>
+                <option value="6"> 6 HR</option>
+                <option value="7"> 7 HR</option>
+                <option value="8"> 8 HR</option>
+                <option value="9"> 9 HR</option>
+                <option value="10"> 10 HR</option>
+
+            </select><br/>
+
+            <input type="submit" value="Submit"/>
+
+        </form>
+    </body>
+</html>
