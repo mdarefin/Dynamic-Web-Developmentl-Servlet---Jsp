@@ -1,31 +1,22 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>Audio Selection</title>
+        <title>Playing an animal audio</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h2>Audio Selection</h2>
+        <h2>Playing an animal audio</h2>
         <form action="AudioForm.jsp">
-
-            Location:
-            <select name="audioList" required>
-                <option selected disabled value="">Select a Location</option>
-                <option value="Lion Roaring">Lion Roaring</option>
-                <option value="Tiger Roaring">Tiger Roaring</option>
-                <option value="Elephant Mother">Elephant Mother</option>
+            Select an animal audio:
+            <select name="animalSounds" required>
+                <option selected disabled value="">Select a Sound</option>
+                <option value="LionRoaring.mp3">Lion Roaring</option>
+                <option value="Tiger.mp3">Tiger Roaring</option>
+                <option value="Elephant.mp3">Elephant Trumpet</option>
             </select>
             <br/>
-
-            <input type="submit" value="Submit"/>
-
+            <input type="submit" value="Go"/>
         </form>
-        
     </body>
 </html>
