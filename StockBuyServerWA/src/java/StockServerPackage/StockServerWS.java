@@ -37,35 +37,15 @@ public class StockServerWS {
         stockNamePrice[6][1] = "140";
 
         //checking the stock(s) that match the user's price
-        if (priceRange.equalsIgnoreCase("lt50")) {
-            for (int i = 0; i < stockNamePrice.length; i++) {
-                if (Integer.parseInt(stockNamePrice[i][1]) < 50) {
-                    outStocks += stockNamePrice[i][0] + " " + stockNamePrice[i][1]+"-";
-                }
-            }
-        }
-        else if (priceRange.equalsIgnoreCase("gte50lt100")) {
-            for (int i = 0; i < stockNamePrice.length; i++) {
-                if (Integer.parseInt(stockNamePrice[i][1]) > 50 && Integer.parseInt(stockNamePrice[i][1]) <100) {
-                    outStocks += stockNamePrice[i][0] + " " + stockNamePrice[i][1]+"-";
-                }
-            }
-        }
-        else if (priceRange.equalsIgnoreCase("gte100lt200")) {
-            for (int i = 0; i < stockNamePrice.length; i++) {
-                if (Integer.parseInt(stockNamePrice[i][1]) >= 100 && Integer.parseInt(stockNamePrice[i][1]) <200) {
-                    outStocks += stockNamePrice[i][0] + " " + stockNamePrice[i][1]+"-";
-                }
-            }
-        }
-        else if (priceRange.equalsIgnoreCase("gte200")) {
-            for (int i = 0; i < stockNamePrice.length; i++) {
-                if (Integer.parseInt(stockNamePrice[i][1]) >= 200) {
-                    outStocks += stockNamePrice[i][0] + " " + stockNamePrice[i][1]+"-";
-                }
-            }
-        }
+        String[] range = priceRange.split(" ");
+        int firstRange = Integer.parseInt(range[0]);
+        int secondRange = Integer.parseInt(range[1]);
 
+        for (int i = 0; i < stockNamePrice.length; i++) {
+            if (Integer.parseInt(stockNamePrice[i][1]) >= firstRange && Integer.parseInt(stockNamePrice[i][1]) < secondRange) {
+                outStocks += stockNamePrice[i][0] + " " + stockNamePrice[i][1] + "-";
+            }
+        }
         return outStocks;
     }
 
