@@ -30,10 +30,11 @@
                 
                 out.println("<table border='3'>");
                 out.println("<tr>");
-                out.println("<th>Stock</th>");
+                out.println("<th colspan=2>Stock</th>");
                 out.println("</tr>");
                 out.println("<tr>");
-                out.println("<td>Name of price(S)</td>");
+                out.println("<td>Name</td>");
+                out.println("<td>Price(S)</td>");
                 out.println("</tr>");
                 
                 for (int i = 0; i <outStirng.length;i++ ){
