@@ -43,7 +43,7 @@ public class StockServerWS {
 
         for (int i = 0; i < stockNamePrice.length; i++) {
             if (Integer.parseInt(stockNamePrice[i][1]) >= firstRange && Integer.parseInt(stockNamePrice[i][1]) < secondRange) {
-                outStocks += stockNamePrice[i][0] + " " + stockNamePrice[i][1] + "-";
+                outStocks += stockNamePrice[i][0] + " " + stockNamePrice[i][1] + " ";
             }
         }
         return outStocks;
