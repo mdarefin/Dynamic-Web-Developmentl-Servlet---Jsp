@@ -23,13 +23,13 @@ public class FoodCalorisWS {
         
         //creating a list of food iteam
         Map foodList = new HashMap();
-        foodList.put("Milk", "Sugar 14 gr and Carb 11 g");
-        foodList.put("Beer", "Sugar 150	gr and Carb 13 g");
-        foodList.put("Soda", "Sugar 39	gr and Carb 36 g");
-        foodList.put("Bread", "Sugar 40	gr and Carb 24 g");
+        foodList.put("Milk", "Sugar 14 gr - Carb 11 g");
+        foodList.put("Beer", "Sugar 150	gr - Carb 13 g");
+        foodList.put("Soda", "Sugar 39	gr - Carb 36 g");
+        foodList.put("Bread", "Sugar 40	gr - Carb 24 g");
         
         if(foodList.containsKey(inputFoodIteam)){
-            return  inputFoodIteam+" contains"+ foodList.get(inputFoodIteam);
+            return  inputFoodIteam+"-"+ foodList.get(inputFoodIteam);
         }
         
         return "Enter valid value";
