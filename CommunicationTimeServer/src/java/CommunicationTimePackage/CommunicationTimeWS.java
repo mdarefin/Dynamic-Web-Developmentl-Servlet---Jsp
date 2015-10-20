@@ -22,7 +22,7 @@ public class CommunicationTimeWS {
         //getting the remaing job time
         int remainingTimeFromRetire = Integer.parseInt(retiarementAge) - remainingTime;
         //converting year to days
-        int daysToCommunicate = remainingTimeFromRetire * ((5 * 4) * 12);//5 days in a weeek 4 a month and 12 months a year
+        int daysToCommunicate = remainingTimeFromRetire * ((52 * 4));//5 days in a weeek 52 weeks in a year
         //getting the total transit time of the user
         int communicateTime = Integer.parseInt(inputCommunicateTime) * daysToCommunicate;
         //converting the time to days
