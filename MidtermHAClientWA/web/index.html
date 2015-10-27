@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- HTML Form that gets user inputs (program and location)-->
+
+<html>
+    <head>
+        <title>MidtermHA:Pet Grooming Web App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>MidtermHA:Pet Grooming Web App</h2>
+        <form action="MidtermHAJSP.jsp">
+            Program: 
+            <input type="checkbox" name="RB" value="Vaccination " />Vaccination
+            &nbsp;&nbsp;
+            <input type="checkbox" name="RC" value="Test " />Test
+            &nbsp;&nbsp;
+            <input type="checkbox" name="RA" value="Special " />Special
+            <br/>
+            Vaccination Types:
+            <select name="VaccinationServicesTypes" >
+                <option selected disabled value="">Select a Vaccination Types</option>
+                <option value="rabbies ">rabbies</option>
+                <option value="distemper ">distemper</option>
+                <option value="lyme ">lyme</option>
+                <option value="corona">corona</option>
+                <option value="FeIV">FeIV</option>
+            </select>
+            <br/>
+           
+            
+            <br/>
+            Test Types:
+            <select name="TestServicesType " >
+                <option selected disabled value="">Select a Test Types</option>
+                <option value="parasites ">parasites</option>
+                <option value="blood">blood</option>
+                <option value="urogenital">urogenital</option>
+            </select>
+            <br/>
+           
+            
+            <br/>
+            Special Types:
+            <select name="SpecialServicesTypes" >
+                <option selected disabled value="">Select a Special Types</option>
+                <option value="spay">spay</option>
+                <option value="neuter">neuter</option>
+            </select>
+            <br/>
+            <input type="submit" value="Submit"/>
+        </form>
+    </body>
+</html>
