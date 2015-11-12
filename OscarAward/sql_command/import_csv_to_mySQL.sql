@@ -1,0 +1,6 @@
+LOAD DATA INFILE '/Users/WaLiD/Desktop/oscarmoviesactors.csv' 
+INTO TABLE oscarAwardTable 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
