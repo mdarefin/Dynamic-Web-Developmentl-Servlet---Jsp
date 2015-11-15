@@ -50,6 +50,7 @@
                     }
 
                     out.println("</tr>");
+                    out.println("</table>");
 
                 }
 
