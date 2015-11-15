@@ -11,8 +11,25 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>GPA Record</div>
-        
-       
+        <div>GPA Record</div><br/><br/>
+
+        <form name="wordFrom" action="databaseConnectionJSP.jsp" onsubmit="return validateForm()" method="post">
+
+            Enter StudentID: <input type="text" name="studentID" > 
+
+            <input type="submit" value="Submit" 
+                   style="background-color:#F78181;margin-bottom:0%">
+            <br/><br/>
+            Insert New Student Record:<br/>
+            StudentID <input type="text" name="stRecodIDIns" style="width: 30px">
+            FirstName <input type="text" name="stRecodFNIns" style="width: 50px">
+            LastName <input type="text" name="stRecodLNIns" style="width: 50px">
+            GPA <input type="text" name="stRecodGPAIns" style="width: 30px">
+            
+            <input type="submit" value="insert" 
+                   style="background-color:#F78181;margin-bottom:0%">
+
+        </form>
+
     </body>
 </html>
