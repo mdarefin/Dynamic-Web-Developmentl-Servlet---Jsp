@@ -11,7 +11,7 @@
         <title>StudentGPA</title>
     </head>
     <body>
-        <h1>!</h1>
+        <h1>Student GPA!</h1>
         <%
             try {
                 String database = "jdbc:mysql://localhost:3306/StudentGPA";
@@ -23,13 +23,14 @@
 
                 //connecting a connection objects 
                 Connection myconn = DriverManager.getConnection(database, user, password);
-
+                out.print("Connected");
                 //Creating a SQL command that extract record(s) where
                 //actor(s) won Oscar more than once
                 //running the SQL string with a Statement class
                 Statement mystat = myconn.createStatement();
 
                 String SQLselect = "SELECT * FROM StudentGPARecord";
+                
                 String studentRecord = "  ";
 
                 ResultSet result = mystat.executeQuery(SQLselect);
@@ -40,6 +41,7 @@
                 }
 
             } catch (Exception e) {
+               out.print("in catch block "+e);
             }
 
         %>
