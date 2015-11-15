@@ -30,30 +30,28 @@
                 //running the SQL string with a Statement class
                 Statement statement = dbConnection.createStatement();
 
-
 //                String command = "INSERT INTO StudentGPARecord VALUES (" + insertID + "," + insertFirstName 
 //                                  + "," + insertLastName + "," + insertGPA + ")";
-                
-
                 //getting the selected student
                 String SQLselect;
-                if (request.getParameter("studentID")!= null) {
-                     int getID = Integer.parseInt(request.getParameter("studentID"));
+                if (request.getParameter("studentID") != "") {
+                    int getID = Integer.parseInt(request.getParameter("studentID"));
                     SQLselect = "SELECT * FROM StudentGPARecord WHERE StudentID = " + getID;
                 } else if (request.getParameter("stRecodIDIns") != null) {
-                    
-                int insertID = Integer.parseInt(request.getParameter("stRecodIDIns"));
-                String insertFirstName = request.getParameter("stRecodFNIns");
-                String insertLastName = request.getParameter("stRecodLNIns");
-                String insertGPA = request.getParameter("stRecodGPAIns");
-                
-                //inserting the data
-                String command = "INSERT INTO StudentGPARecord VALUES("+ insertID +","+insertFirstName
-                                 +","+insertLastName+","+insertGPA+");";
-                statement.executeUpdate(command);
-                
-                //displayin
-                SQLselect = "SELECT * FROM StudentGPARecord WHERE StudentID = " + insertID;
+
+                    int insertID = Integer.parseInt(request.getParameter("stRecodIDIns"));
+                    String insertFirstName = request.getParameter("stRecodFNIns");
+                    String insertLastName = request.getParameter("stRecodLNIns");
+                    String insertGPA = request.getParameter("stRecodGPAIns");
+
+                    //inserting the data
+                    String command = "INSERT INTO StudentGPARecord VALUES(" + insertID + ",'" + insertFirstName + "','"
+                                    + insertLastName + "','" + insertGPA + "')";
+// 
+                    statement.executeUpdate(command);
+
+                    //display the inserted student
+                    SQLselect = "SELECT * FROM StudentGPARecord WHERE StudentID ="+insertID;
                 } else {
                     SQLselect = "SELECT * FROM StudentGPARecord";
                 }
@@ -77,16 +75,10 @@
                     out.println("</tr>");
                 }
 
-                String[] gpa = studentRecord.split(" ");
-                for (String s : gpa) {
-                    out.print("working? ");
-
-                    out.println("<tr>" + s + "</tr>");
-                }
                 out.println("</table>");
 
             } catch (Exception e) {
-                out.print("in catch block " + e);
+                out.print(e);
             }
         %>
     </body>

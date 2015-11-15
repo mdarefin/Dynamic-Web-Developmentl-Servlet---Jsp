@@ -19,13 +19,17 @@ and open the template in the editor.
 
             <input type="submit" value="Submit" 
                    style="background-color:#F78181;margin-bottom:0%">
-            <br/><br/>
+
+        </form>
+
+        <form name="insertRecord" action="databaseConnectionJSP.jsp" onsubmit="return validateForm()" method="post">
+
             Insert New Student Record:<br/>
             StudentID <input type="text" name="stRecodIDIns" style="width: 30px">
             FirstName <input type="text" name="stRecodFNIns" style="width: 50px">
             LastName <input type="text" name="stRecodLNIns" style="width: 50px">
             GPA <input type="text" name="stRecodGPAIns" style="width: 30px">
-            
+
             <input type="submit" value="insert" 
                    style="background-color:#F78181;margin-bottom:0%">
 
