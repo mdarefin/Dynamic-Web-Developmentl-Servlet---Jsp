@@ -29,13 +29,14 @@
                 //running the SQL string with a Statement class
                 Statement mystat = myconn.createStatement();
 
-                String SQLselect = "";
-                String sqlSelectWitInFive = "  ";
+                String SQLselect = "SELECT * FROM StudentGPARecord";
+                String studentRecord = "  ";
 
                 ResultSet result = mystat.executeQuery(SQLselect);
 
                 while (result.next()) {
-
+                     out.println(result.getInt("StudentID") + " " + result.getString("S_Firstname")
+                            + " " + result.getString("S_Lastname") + " " + result.getString("GPA") + "\n");
                 }
 
             } catch (Exception e) {
