@@ -30,27 +30,23 @@
                 //running the SQL string with a Statement class
                 Statement statement = dbConnection.createStatement();
 
-//                String command = "INSERT INTO StudentGPARecord VALUES (" + insertID + "," + insertFirstName 
-//                                  + "," + insertLastName + "," + insertGPA + ")";
-                //getting the selected student
                 String SQLselect;
- 
-                if (request.getParameter("stRecodIDIns") != "") {
 
-                    int insertID = Integer.parseInt(request.getParameter("stRecodIDIns"));
-                    String insertFirstName = request.getParameter("stRecodFNIns");
-                    String insertLastName = request.getParameter("stRecodLNIns");
-                    String insertGPA = request.getParameter("stRecodGPAIns");
+                if (request.getParameter("stRecodIDUpdate") != "") {
 
+                    int updateID = Integer.parseInt(request.getParameter("stRecodIDUpdate"));
+                    String updateField = request.getParameter("updateField");
+                    String updateRecord = request.getParameter("updateRecord");
+
+                    out.print(updateField+" "+ updateRecord);
                     //inserting the data
-                    String command = "INSERT INTO StudentGPARecord VALUES(" + insertID + ",'" + insertFirstName + "','"
-                                    + insertLastName + "','" + insertGPA + "')";
-                    //String command = "INSERT INTO StudentGPARecord VALUES(112, Sami, Ali, 3.9 )";
+                   // String command = "UPDATE StudentGPARecord SET"+ updateField+"="+ updateRecord+"WHERE StudentID="+updateID;
+                    String command = "UPDATE StudentGPARecord SET GPA = '3.3' WHERE StudentID=102";
 // 
                     statement.executeUpdate(command);
 
                     //display the inserted student
-                    SQLselect = "SELECT * FROM StudentGPARecord WHERE StudentID ="+insertID;
+                    SQLselect = "SELECT * FROM StudentGPARecord WHERE StudentID =" + updateID;
                 } else {
                     SQLselect = "SELECT * FROM StudentGPARecord";
                 }

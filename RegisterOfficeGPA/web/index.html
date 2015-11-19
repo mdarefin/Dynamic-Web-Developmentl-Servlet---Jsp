@@ -13,14 +13,14 @@ and open the template in the editor.
     <body>
         <div>GPA Record</div><br/><br/>
 
-        <form name="wordFrom" action="databaseConnectionJSP.jsp" onsubmit="return validateForm()" method="post">
+        <form name="wordFrom" action="studentSearch.jsp" onsubmit="return validateForm()" method="post">
 
             Enter StudentID: <input type="text" name="studentID" > 
 
             <input type="submit" value="Submit" 
                    style="background-color:#F78181;margin-bottom:0%">
 
-        </form>
+        </form><br/>
 
         <form name="insertRecord" action="databaseConnectionJSP.jsp" onsubmit="return validateForm()" method="post">
 
@@ -33,7 +33,25 @@ and open the template in the editor.
             <input type="submit" value="insert" 
                    style="background-color:#F78181;margin-bottom:0%">
 
-        </form>
+        </form><br/>
+
+        <form name="updateRecord" action="updateRecord.jsp" onsubmit="return validateForm()" method="post">
+
+            Update Student Record:<br/>
+            StudentID <input type="text" name="stRecodIDUpdate" style="width: 30px">
+
+            <select name="updateField">
+                <option value="" selected disabled> Select a Update Field</option>
+                <option value="S_Firstname">First Name</option>
+                <option value="S_Lastnam">Last Name</option>
+                <option value="GPA">GPA</option>
+            </select>
+
+            <input type="text" name="updateRecord" style="width: 50px">
+
+            <input type="submit" value="insert" 
+                   style="background-color:#F78181;margin-bottom:0%">
+        </form><br/>
 
     </body>
 </html>

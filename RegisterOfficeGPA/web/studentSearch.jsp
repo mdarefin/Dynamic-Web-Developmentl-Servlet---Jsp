@@ -34,23 +34,9 @@
 //                                  + "," + insertLastName + "," + insertGPA + ")";
                 //getting the selected student
                 String SQLselect;
- 
-                if (request.getParameter("stRecodIDIns") != "") {
-
-                    int insertID = Integer.parseInt(request.getParameter("stRecodIDIns"));
-                    String insertFirstName = request.getParameter("stRecodFNIns");
-                    String insertLastName = request.getParameter("stRecodLNIns");
-                    String insertGPA = request.getParameter("stRecodGPAIns");
-
-                    //inserting the data
-                    String command = "INSERT INTO StudentGPARecord VALUES(" + insertID + ",'" + insertFirstName + "','"
-                                    + insertLastName + "','" + insertGPA + "')";
-                    //String command = "INSERT INTO StudentGPARecord VALUES(112, Sami, Ali, 3.9 )";
-// 
-                    statement.executeUpdate(command);
-
-                    //display the inserted student
-                    SQLselect = "SELECT * FROM StudentGPARecord WHERE StudentID ="+insertID;
+                if (request.getParameter("studentID") != "") {
+                    int getID = Integer.parseInt(request.getParameter("studentID"));
+                    SQLselect = "SELECT * FROM StudentGPARecord WHERE StudentID = " + getID;
                 } else {
                     SQLselect = "SELECT * FROM StudentGPARecord";
                 }
