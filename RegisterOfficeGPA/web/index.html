@@ -14,7 +14,8 @@ and open the template in the editor.
         <div>GPA Record</div><br/><br/>
 
         <form name="wordFrom" action="studentSearch.jsp" onsubmit="return validateForm()" method="post">
-
+            
+            Look Up Student Record:<br/>
             Enter StudentID: <input type="text" name="studentID" > 
 
             <input type="submit" value="Submit" 
@@ -49,7 +50,17 @@ and open the template in the editor.
 
             <input type="text" name="updateRecord" style="width: 50px">
 
-            <input type="submit" value="insert" 
+            <input type="submit" value="Update" 
+                   style="background-color:#F78181;margin-bottom:0%">
+        </form><br/>
+        
+        <form name="deleteRecord" action="deleteRecord.jsp" onsubmit="return validateForm()" method="post">
+
+            Delete Student Record:<br/>
+           
+            Enter StudentID: <input type="text" name="deleteStudentID" > 
+
+            <input type="submit" value="Delete" 
                    style="background-color:#F78181;margin-bottom:0%">
         </form><br/>
 

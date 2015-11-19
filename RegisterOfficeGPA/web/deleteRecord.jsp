@@ -25,33 +25,21 @@
                 //connecting a connection objects 
                 Connection dbConnection = DriverManager.getConnection(database, user, password);
 
-                //Creating a SQL command that extract record(s) where
-                //actor(s) won Oscar more than once
-                //running the SQL string with a Statement class
                 Statement statement = dbConnection.createStatement();
 
                 String SQLselect;
-                
-                 int updateID = Integer.parseInt(request.getParameter("stRecodIDUpdate"));
-                    String updateField = request.getParameter("updateField");
-                    String updateRecord = request.getParameter("updateRecord");
 
-                if (request.getParameter("stRecodIDUpdate") != "") {
-                   
-                    out.print(updateField + " " + updateRecord);
-                    //inserting the data
-                    // String command = "UPDATE StudentGPARecord SET"+ updateField+"="+ updateRecord+"WHERE StudentID="+updateID;
-                    String command = "UPDATE StudentGPARecord SET " + updateField + "='" + updateRecord + "'WHERE StudentID=" + updateID;
+                if (request.getParameter("deleteStudentID") != "") {
+
+                    int deleteID = Integer.parseInt(request.getParameter("deleteStudentID"));
+
+                    String command = "DELETE FROM StudentGPARecord WHERE StudentID=" + deleteID;
 // 
                     statement.executeUpdate(command);
 
                     //display the inserted student
-                    SQLselect = "SELECT * FROM StudentGPARecord WHERE StudentID =" + updateID;
-                }
-                else if(updateID != 0){
-                    SQLselect="";
-                }
-                else {
+                    SQLselect = "SELECT * FROM StudentGPARecord";
+                } else {
                     SQLselect = "SELECT * FROM StudentGPARecord";
                 }
 
