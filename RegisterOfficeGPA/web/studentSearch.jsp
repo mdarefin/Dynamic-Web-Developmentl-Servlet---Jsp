@@ -25,18 +25,16 @@
                 //connecting a connection objects 
                 Connection dbConnection = DriverManager.getConnection(database, user, password);
 
-                //Creating a SQL command that extract record(s) where
-                //actor(s) won Oscar more than once
                 //running the SQL string with a Statement class
                 Statement statement = dbConnection.createStatement();
 
-//                String command = "INSERT INTO StudentGPARecord VALUES (" + insertID + "," + insertFirstName 
-//                                  + "," + insertLastName + "," + insertGPA + ")";
                 //getting the selected student
                 String SQLselect;
                 if (request.getParameter("studentID") != "") {
                     int getID = Integer.parseInt(request.getParameter("studentID"));
+                    String studentIDChekc = "";
                     SQLselect = "SELECT * FROM StudentGPARecord WHERE StudentID = " + getID;
+
                 } else {
                     SQLselect = "SELECT * FROM StudentGPARecord";
                 }
@@ -54,6 +52,7 @@
                 out.println("</tr>");
 
                 while (result.next()) {
+
                     out.println("<tr>");
                     out.println("<td>" + result.getInt("StudentID") + "</td> <td>" + result.getString("S_Firstname")
                             + "</td> <td>" + result.getString("S_Lastnam") + " </td><td>" + result.getString("GPA") + "</td>");
