@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+This is a Web application given to do for test 3 
+-->
+<html>
+    <head>
+        <title>GPA Record</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>GPA Record</div><br/><br/>
+
+        <form name="wordFrom" action="search.jsp" onsubmit="return validateForm()" method="post">
+            
+            Look Up Student Record:<br/>
+            Enter StudentID: <input type="text" name="studentID" > 
+
+            <input type="submit" value="Submit" 
+                   style="background-color:#F78181;margin-bottom:0%">
+
+        </form><br/>
+
+        <form name="insertRecord" action="search.jsp" onsubmit="return validateForm()" method="post">
+
+            Insert New Student Record:<br/>
+            StudentID <input type="text" name="stRecodIDIns" style="width: 30px">
+            FirstName <input type="text" name="stRecodFNIns" style="width: 50px">
+            LastName <input type="text" name="stRecodLNIns" style="width: 50px">
+            GPA <input type="text" name="stRecodGPAIns" style="width: 30px">
+
+            <input type="submit" value="insert" 
+                   style="background-color:#F78181;margin-bottom:0%">
+
+        </form><br/>
+
+        <form name="updateRecord" action="search.jsp" onsubmit="return validateForm()" method="post">
+
+            Update Student Record:<br/>
+            StudentID <input type="text" name="stRecodIDUpdate" style="width: 30px">
+
+            <select name="updateField">
+                <option value="" selected disabled> Select a Update Field</option>
+                <option value="S_Firstname">First Name</option>
+                <option value="S_Lastnam">Last Name</option>
+                <option value="GPA">GPA</option>
+            </select>
+
+            <input type="text" name="updateRecord" style="width: 50px">
+
+            <input type="submit" value="Update" 
+                   style="background-color:#F78181;margin-bottom:0%">
+        </form><br/>
+        
+        <form name="deleteRecord" action="search.jsp" onsubmit="return validateForm()" method="post">
+
+            Delete Student Record:<br/>
+           
+            Enter StudentID: <input type="text" name="deleteStudentID" > 
+
+            <input type="submit" value="Delete" 
+                   style="background-color:#F78181;margin-bottom:0%">
+        </form><br/>
+
+    </body>
+</html>
