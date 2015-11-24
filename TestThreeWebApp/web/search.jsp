@@ -30,32 +30,32 @@
 
                 //getting the selected student
                 String SQLselect;
-                if (request.getParameter("studentID") != "") { //parameter need to be changed
-                    int getID = Integer.parseInt(request.getParameter("studentID"));
+                if (request.getParameter("lastName") != "") { //parameter need to be changed
+                    int getName = Integer.parseInt(request.getParameter("lastName"));
                     String studentIDChekc = "";
-                    SQLselect = "SELECT * FROM StudentGPARecord WHERE StudentID = " + getID;
+                    SQLselect = "SELECT * FROM booksDb WHERE A_LastName = " + getName;
 
                 } else {
-                    SQLselect = "SELECT * FROM StudentGPARecord";
+                    SQLselect = "SELECT * FROM booksDb";
                 }
-
-                String studentRecord = "  ";
 
                 ResultSet result = statement.executeQuery(SQLselect);
 
                 out.println("<table border='3'>");
                 out.println("<tr>");
-                out.println("<td> ID </td>");
-                out.println("<td> firstName </td>");
-                out.println("<td> lastName </td>");
-                out.println("<td> GPA </td>");
+                out.println("<td> ISBN </td>");
+                out.println("<td> Last Name </td>");
+                out.println("<td> First Name </td>");
+                out.println("<td> Title </td>");
+                out.println("<td> Publisher </td>");
+                out.println("<td> Year </td>");
                 out.println("</tr>");
 
                 while (result.next()) {
                     //search iteam has to change. 
                     out.println("<tr>");
-                    out.println("<td>" + result.getInt("StudentID") + "</td> <td>" + result.getString("S_Firstname")
-                            + "</td> <td>" + result.getString("S_Lastnam") + " </td><td>" + result.getString("GPA") + "</td>");
+                    out.println("<td>" + result.getInt("ISBN") + "</td> <td>" + result.getString("A_LastName")
+                            + "</td> <td>" + result.getString("A_FirstName") + " </td><td>" + result.getString("GPA") + "</td>");
                     out.println("</tr>");
                 }
 
