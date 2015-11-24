@@ -54,8 +54,12 @@
                 while (result.next()) {
                     //search iteam has to change. 
                     out.println("<tr>");
-                    out.println("<td>" + result.getInt("ISBN") + "</td> <td>" + result.getString("A_LastName")
-                            + "</td> <td>" + result.getString("A_FirstName") + " </td><td>" + result.getString("GPA") + "</td>");
+                    out.println("<td>" + result.getInt("ISBN") + 
+                                "</td> <td>" + result.getString("A_LastName")+ 
+                                "</td> <td>" + result.getString("A_FirstName") + 
+                                " </td><td>" + result.getString("Title") + 
+                                " </td><td>" + result.getString("Publisher") +
+                                " </td><td>" + result.getString("Year") +"</td>");
                     out.println("</tr>");
                 }
 
