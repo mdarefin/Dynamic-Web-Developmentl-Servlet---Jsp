@@ -14,7 +14,7 @@ This is a Web application given to do for test 3
         <form name="wordFrom" action="search.jsp" onsubmit="return validateForm()" method="post">
             
             Look Up Books By Author:<br/>
-            Enter Author LastName <input type="text" name="lastName" > 
+            Enter Author LastName <input type="text" name="lastName" required pattern="[A-Za-z]+"> 
 
             <input type="submit" value="Submit" 
                    style="background-color:#F78181;margin-bottom:0%">
