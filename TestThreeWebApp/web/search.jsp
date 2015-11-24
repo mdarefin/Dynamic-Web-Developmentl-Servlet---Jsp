@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>StudentGPA</title>
+        <title>Books Record</title>
     </head>
     <body>
         <h1>Student GPA!</h1>
