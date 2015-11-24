@@ -12,7 +12,7 @@
         <title>Books Record</title>
     </head>
     <body>
-        <h1>Student GPA!</h1>
+        <h1>Books Record!</h1>
         <%
             try {
                 String database = "jdbc:mysql://localhost:3306/testThreeDB";
@@ -31,9 +31,8 @@
                 //getting the selected student
                 String SQLselect;
                 if (request.getParameter("lastName") != "") { //parameter need to be changed
-                    int getName = Integer.parseInt(request.getParameter("lastName"));
-                    String studentIDChekc = "";
-                    SQLselect = "SELECT * FROM booksDb WHERE A_LastName = " + getName;
+                    String getName = request.getParameter("lastName");
+                    SQLselect = "SELECT * FROM booksDb WHERE A_LastName = '"+ getName+"'";
 
                 } else {
                     SQLselect = "SELECT * FROM booksDb";
