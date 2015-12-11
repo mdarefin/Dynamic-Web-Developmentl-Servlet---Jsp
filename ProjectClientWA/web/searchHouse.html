@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body  {
+                background-image: url("images/blue-christmas-snow-fall-animation.gif");
+                background-color: #cccccc;
+                color: #D8D8D8;
+            }
+        </style>
+        <script>
+            function checkForm() {
+                var isZipCodeEmpty = true;
+                var isCityEmpty = true;
+                var isStateEmpty = true;
+
+                inputZipCode = projectForm.zipcode.value;
+                inputCity = projectForm.city.value;
+                inputState = projectForm.state.value;
+
+                if (!inputZipCode == "") {
+                    isZipCodeEmpty = false;
+                    return true;
+                }
+                if (inputCity == "" || inputState == "") {
+                    alert("please enter the City, State or Zip Code!");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    <body>  
+        <form action="ZilloProjectServlet" name="projectForm" onsubmit="return checkForm()">
+            <br/><br/><br/><br/>
+            Address:&nbsp;&nbsp; <input type="text" name="address" required="" ><br/><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp; City: &nbsp;&nbsp;<input type="text" name="city"><br/><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp; State: &nbsp;<input type="text" name="state"/> <br/><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp; Zip: &nbsp;&nbsp; <input type="text" name="zipcode"/>
+            <br/><br/>
+            <input type="submit" value="submit" style="background-color:#F78181;margin-left:auto;margin-right:auto;display:block;margin-top:5%;margin-bottom:0%"/> &nbsp;&nbsp;
+            <button type="reset" value="Clear" style="background-color:#F78181;margin-left:auto;margin-right:auto;display:block;margin-top:3%;margin-bottom:0%">Clear</button>
+        </form>
+
+    </body>
+</html>
