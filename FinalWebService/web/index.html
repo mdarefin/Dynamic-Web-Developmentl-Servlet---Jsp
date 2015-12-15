@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+Professor Pinto
+Web Programming Final
+Md Arefin
+-->
+<html>
+    <head>
+        <title> Record</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+        <div> Record</div><br/><br/>
+
+        <form name="wordFrom" action="IdSearch.jsp" onsubmit="return checkform()()" method="post">
+            
+            Look Up Art Record:<br/>
+            Enter ID: <input type="text" name="id" > 
+
+            <input type="submit" value="Submit" 
+                   style="background-color:#F78181;margin-bottom:0%">
+            <input type="submit" value="Show Currency" 
+                   style="background-color:#F78181;margin-bottom:0%">
+
+        </form><br/>
+
+        <form name="ArtBidding" action="ArtBidding.jsp" onsubmit="return validateForm()" method="post">
+
+            Start your bidding:<br/>
+
+            <select name="ArtForm" required>
+                <option value="" selected disabled> Select a Art item to bid</option>
+                <option value="1">SAPI Stone Head, Sierra Leone</option>
+                <option value="2">Luluwa Helmet Mask, Republic of Congo</option>
+                <option value="3">Mbembe Female Torso, Nigeria</option>
+                <option value="4">Magdale Odundo, Nairobi</option>
+                <option value="5">Vezo Female Funerary Figure, Madagascar</option>
+            </select>
+            
+            <select name="CurrencyForm" required>
+                <option value="" selected disabled> Select a Currency</option>
+                <option value="00">US</option>
+                <option value="11">England (Pound)</option>
+                <option value="22">China (Yuan)</option>
+                <option value="33">Euro </option>
+                <option value="44">Russia (Ruble)</option>
+                <option value="55">Japan (Yen)</option>
+            </select>
+            
+            <input type="text" name="BidValue" style="width: 50px" required pattern="[0-9]+">
+
+            <input type="submit" value="Bid" 
+                   style="background-color:#F78181;margin-bottom:0%">
+        </form><br/>
+
+    </body>
+</html>
